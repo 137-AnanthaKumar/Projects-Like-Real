@@ -1,0 +1,21 @@
+.currentpage{
+  background-color: blueviolet;
+  color: whitesmoke;
+}
+
+.tab-head{
+  margin-top: -100px;
+height: 400px;
+overflow: auto;
+margin-top: 0px;
+}
+
+.tab-head::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.tab-head {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}

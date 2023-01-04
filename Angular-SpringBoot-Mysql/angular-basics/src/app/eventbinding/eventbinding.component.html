@@ -1,0 +1,10 @@
+<p>eventbinding works!{{msg}}</p>
+<h3>{{value}}</h3>
+<button (click)="event()">Click</button>
+
+<hr/>
+
+<input type="text" (keyup)="eventMy($event)">
+
+<p>templete ref result {{test.value}}</p>
+<input type="text" #test (keyup)="eventMy(test.value)">

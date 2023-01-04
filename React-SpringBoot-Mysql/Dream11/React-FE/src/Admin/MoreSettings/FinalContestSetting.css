@@ -1,0 +1,66 @@
+
+  #hhhdddg{
+    height: 40px;
+  }
+  
+  #fin23e{
+    width: 920px;
+    display: flex;
+    height: 35px;
+    background-color: mistyrose;
+    border-radius: 20px;
+  }
+  #fin23e > div > h4{
+   text-align: center;
+    margin-left: 5px;
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+  }
+  #fin23e > div:hover{
+    background-color: aliceblue;
+    color: rgb(71, 42, 200);
+    border-radius: 24px;
+    transition: 2ms;
+    cursor: pointer;
+
+
+  }
+  #hjn5554e{
+    height: 5px;
+    width: 870px;
+    background-color: aliceblue ;
+    position: relative;
+  }
+  #allcontestss {
+    margin-left: 208px;
+    position: absolute;
+    background-color: blue;
+    height: 5px;
+    width: 220px;
+  }
+  #prizeCall{
+    margin-left: 429px;
+    position: absolute;
+    background-color: blue;
+    height: 5px;
+     width: 220px;
+  }
+
+  #viewww{
+    margin-left: 643px;
+    position: absolute;
+    background-color: blue;
+    height: 5px;
+     width: 220px;
+  
+  }
+
+  #gamerole{
+    background-image: linear-gradient(to bottom right,  mistyrose, yellow);
+        margin-top: 5px;
+    border-radius: 10px;
+    height: 450px;
+    width: 900px;
+  }
+ 

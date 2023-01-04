@@ -1,0 +1,88 @@
+<div  class="container-fluid  main">
+
+   <div class="row box-top">
+
+      <div class="col-5 bg-dis text-center" (click)="goToPnrEnq()"><h5> PNR STATUS</h5></div>
+      <div class="col-2 bg-spec" ></div>
+      <div class="col-5 text-center bg-dis">Chart Status</div>
+
+  </div>
+   <div class="container-fluid search-box">
+       <div class="container text-center text-primary">
+           <h2>BOOK TICKET</h2>
+       </div>
+       <div class="container">
+        <div class="form-row row">
+            <div class="form-group col-6">
+              <label for="inputEmail4">FROM </label>
+              <input type="email" class="form-control" id="inputEmail4" (keyup)="onChangeStation('from')"  [(ngModel)]="searchdata.fromStation" value="searchdata.fromStation" placeholder="From">
+            </div>
+
+
+            <div class="form-group col-6 mt-10">
+                <label for="inputEmail4">TO </label>
+                <input type="email" class="form-control" id="inputEmail4" (keyup)="onChangeStation('to')" [(ngModel)]="searchdata.toStation" value="searchdata.toStation"  placeholder="To">
+              </div>
+          </div>
+          <div class="row container ">
+            <div class="col-6 hiddenfrom">
+                 <div class="container" *ngFor="let sta of stat" (click)="satTionClick('from',sta)">
+                  <h6>{{sta}}</h6>
+                 </div>
+            </div>
+            <div class="col-6 hiddento">
+
+                <div class="container" *ngFor="let sta of statto" (click)="satTionClick('to',sta)">
+                 <h6 >{{sta}}</h6>
+
+           </div>
+            </div>
+
+        </div>
+
+
+          <div class="row mt-3">
+            <div class="form-group col-6"> <!-- Date input -->
+                <label class="control-label" for="date">DATE OF JOURNEY</label>
+                <input class="form-control" id="date" name="date" [(ngModel)]="searchdata.date" value="10/25/2022" placeholder="MM/DD/YYY" type="date"/>
+              </div>
+              <div class="form-group col-6"> <!-- Date input -->
+                <label class="control-label" for="date">SELECT CLASS</label>
+                <select class="form-select form-select-md"  [(ngModel)]="searchdata.classes" aria-label=".form-select-lg example">
+
+                    <option selected value="SL">SL</option>
+                    <option value="3A">AC Third Class(3 AC)</option>
+                    <option value="2A">AC Second Class(2 AC)</option>
+                    <option value="1A">AC First Class(1 AC)</option>
+
+                  </select>
+              </div>
+              <div class="row mt-4">
+                <div class="form-group col-6"> <!-- Date input -->
+                    <select class="form-select form-select-md"  [(ngModel)]="searchdata.allclass" aria-label=".form-select-lg example">
+                        <option selected  value="GEN">GENERAL</option>
+                        <option value="TATK">TATKAL</option>
+
+
+                      </select>
+                  </div>
+                  <div class="col-6">
+
+                  </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-6">
+                    <button class="btn btn-info" (click)="onSearch()" >SEARCH</button>
+                </div>
+              </div>
+          </div>
+
+       </div>
+
+
+
+   </div>
+
+</div>
+
+

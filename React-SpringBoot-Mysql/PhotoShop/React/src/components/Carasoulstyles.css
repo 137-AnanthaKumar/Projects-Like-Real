@@ -1,0 +1,13 @@
+.d-block{
+    height:600px;
+    width: 1000px;
+
+}
+ .content p h1{
+    width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+ }

@@ -1,0 +1,418 @@
+<div [ngSwitch]="settingpage">
+  <!-- <div *nSwitchCase="'all-emp'" ></div> -->
+
+  <div *ngSwitchCase="'all-emp'">
+    <div  class="container bg-primary text-white text-center">
+      <div class="row align-items-start">
+        <div
+          *ngIf="!(role == 'ROLE_ADMIN')"
+          class="col controlbtn"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          New Employee
+        </div>
+
+        <div *ngIf="role == 'ROLE_OWNER'" class="col controlbtn">
+          Change Owner
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!loading" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div   class="grid-container">
+      <div *ngFor="let employe of employees" class="">
+        <div
+          (click)="viewEmployee(employe.workerCode)"
+          [ngClass]="
+            code == employe.workerCode
+              ? 'card grid-item-mine'
+              : 'card grid-item'
+          "
+          style="width: 18rem"
+        >
+          <div class="special">
+            <h1>{{ employe.role[5] }}</h1>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ employe.fullName }}-{{ employe.workerCode }}
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ employe.role }}</h6>
+            <p class="card-text"><span></span>{{ employe.area }}</p>
+            <a class="card-link">{{ employe.mobileNo }}</a>
+            <a class="card-link">{{ employe.accountStatus }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngSwitchCase="'oneview'">
+    <div>
+      <div>
+        <button
+          *ngIf="
+            role != 'ROLE_ADMIN' &&
+            oneEmployee.accountStatus == 'ACTIVE' &&
+            code != oneEmployee.workerCode
+          "
+          class="btn btn-primary"
+          (click)="onBlock()"
+        >
+          Block
+        </button>
+        <button
+          *ngIf="
+            role != 'ROLE_ADMIN' &&
+            oneEmployee.accountStatus == 'BLOCKED' &&
+            code != oneEmployee.workerCode
+          "
+          (click)="onActivate()"
+          class="btn btn-primary"
+        >
+          Activate
+        </button>
+        <button
+          *ngIf="role == 'ROLE_OWNER' && code != oneEmployee.workerCode"
+          class="btn btn-danger"
+          (click)="onDelete()"
+        >
+          Delete
+        </button>
+        <button
+          *ngIf="role == 'ROLE_OWNER' && code != oneEmployee.workerCode"
+          class="btn btn-danger"
+          (click)="roleChanger(oneEmployee.user.roles[0].name)"
+        >
+          Change Role
+        </button>
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="card-container">
+        <span class="pro">{{ oneEmployee.accountStatus }}</span>
+        <img
+          class="round"
+          src="https://randomuser.me/api/portraits/women/79.jpg"
+          alt="user"
+        />
+        <h3>{{ oneEmployee.fullName }}</h3>
+        <h6>{{ oneEmployee.workerCode }}</h6>
+        <h6>{{ oneEmployee.area }}</h6>
+        <p>
+          Employee of ***** <br />
+          {{ oneEmployee.user.roles[0].name }}
+        </p>
+        <div class="buttons">
+          <button class="primary" (click)="editForm()">Edit</button>
+          <button class="primary" (click)="passWordForm()">
+            Update Password
+          </button>
+        </div>
+        <div class="skills">
+          <h6>Details</h6>
+          <ul>
+            <li>Mobile : {{ oneEmployee.mobileNo }}</li>
+            <li>Email: : {{ oneEmployee.user.email }}</li>
+            <li>Salary : {{ oneEmployee.salary }}</li>
+            <li>Working From : {{ oneEmployee.fromdate }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div [ngSwitch]="insideProfile" class="forms">
+        <div class="" *ngSwitchCase="'editform'">
+          <div class="target">
+            <div class="col">
+              <div class="card">
+                <div class="login-box">
+                  <div class="login-snip">
+                    <input
+                      id="tab-2"
+                      type="radio"
+                      name="tab"
+                      class="sign-up"
+                    /><label for="tab-2" class="tab">Change Profile</label>
+                    <div class="login-space">
+                      <div class="sign-up-form">
+                        <div class="group">
+                          <label for="user" class="label" disabled
+                            >Username</label
+                          >
+                          <input
+                            id="user"
+                            type="text"
+                            class="input"
+                            (keyup)="onChangeform('un')"
+                            [(ngModel)]="profile.username"
+                          />
+                        </div>
+                        <div class="group">
+                          <label for="pass" class="label">Password</label>
+                          <input
+                            id="pass"
+                            type="password"
+                            (keyup)="onChangeform('pw')"
+                            class="input"
+                            data-type="password"
+                            [(ngModel)]="profile.password"
+                            placeholder="Enter your password"
+                          />
+                        </div>
+                        <div class="group">
+                          <label for="pass" class="label">Full Name</label>
+                          <input
+                            id="pass"
+                            type="text"
+                            (keyup)="onChangeform('fn')"
+                            class="input"
+                            [(ngModel)]="profile.fullName"
+                            data-type="password"
+                          />
+                        </div>
+                        <div class="group">
+                          <label for="pass" class="label">Email Address</label>
+                          <input
+                            id="pass"
+                            type="text"
+                            (keyup)="onChangeform('em')"
+                            [(ngModel)]="profile.email"
+                            class="input"
+                          />
+                        </div>
+                        <div class="group">
+                          <label for="pass" class="label">Mobile Number</label>
+                          <input
+                            id="pass"
+                            type="text"
+                            (keyup)="onChangeform('mo')"
+                            [(ngModel)]="profile.mobileNo"
+                            class="input"
+                          />
+                        </div>
+                        <div class="d-flex">
+                          <button
+                            (click)="Update('profile')"
+                            class="btn btn-primary"
+                          >
+                            Update
+                          </button>
+                          <p>..</p>
+                          <button class="btn btn-warning" (click)="acticity()">
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="" *ngSwitchCase="'updatePass'">
+          <div class="target">
+            <div class="col">
+              <div class="card">
+                <div class="login-box">
+                  <div class="login-snip">
+                    <input
+                      id="tab-2"
+                      type="radio"
+                      name="tab"
+                      class="sign-up"
+                    /><label for="tab-2" class="tab">Update Password</label>
+                    <div class="login-space">
+                      <div class="sign-up-form">
+                        <div class="group">
+                          <label for="pass" class="label">Old Password</label>
+                          <input
+                            id="pass"
+                            type="password"
+                            (keyup)="onChangeform('pw')"
+                            class="input"
+                            data-type="password"
+                            placeholder="Enter your password"
+                          />
+                        </div>
+                        <div class="group">
+                          <label for="pass" class="label">New Password</label>
+                          <input
+                            id="pass"
+                            type="password"
+                            (keyup)="onChangeform('pw')"
+                            class="input"
+                            data-type="password"
+                            placeholder="Enter your password"
+                          />
+                        </div>
+                        <div class="group">
+                          <label for="pass" class="label"
+                            >Confirm Password</label
+                          >
+                          <input
+                            id="pass"
+                            type="password"
+                            (keyup)="onChangeform('pw')"
+                            [(ngModel)]="profile.password"
+                            class="input"
+                            data-type="password"
+                            placeholder="Enter your password"
+                          />
+                        </div>
+
+                        <div class="group">
+                          <input
+                            type="submit"
+                            (click)="Update('password')"
+                            class="button"
+                            value="Update"
+                          />
+                          <hr />
+                          <input
+                            (click)="acticity()"
+                            type="submit"
+                            class="button"
+                            value="Cancel"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="'myactivity'">
+
+         <div class="appactivity">
+          <app-activity [code]=oneEmployee.workerCode></app-activity>
+         </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- <div class="wrapper">
+
+    </div> -->
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" class="text-primary">
+          New Employee Form
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          #closebutton
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body mx-3 text-primary">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail4"
+              [(ngModel)]="user.email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputPassword4"
+              [(ngModel)]="employee.fullName"
+              placeholder="FullName"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="employee.doorNo"
+            id="inputAddress"
+            placeholder="1234 Main St"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2">Area</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="employee.area"
+            id="inputAddress2"
+            placeholder="Apartment, studio, or floor"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Username</label>
+            <input
+              type="text"
+              [(ngModel)]="user.username"
+              class="form-control"
+              id="inputCity"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Role</label>
+            <select id="inputState" [(ngModel)]="roleEmp" class="form-control">
+              <option>ROLE_ADMIN</option>
+              <option *ngIf="role == 'ROLE_OWNER'">ROLE_MANAGER</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Salary</label>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="employee.salary"
+              id="inputAddress2"
+              placeholder="Apartment, studio, or floor"
+            />
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">MobileNo</label>
+            <input
+              type="number"
+              [(ngModel)]="employee.mobileNo"
+              class="form-control"
+              id="inputZip"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" (click)="popUpCloce()">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" (click)="addEmployee()">
+          AddEmployee
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

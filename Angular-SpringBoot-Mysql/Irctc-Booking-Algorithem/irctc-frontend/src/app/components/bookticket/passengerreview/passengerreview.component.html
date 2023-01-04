@@ -1,0 +1,63 @@
+<div>
+    <div class="container-fluid top-1">
+        <div class="row trainHead">
+            <div class="col-4"><h5>{{trainCurrenyDetail.trainName}}({{trainCurrenyDetail.trainNo}})</h5></div>
+            <div class="col"></div>
+        </div>
+        <div class="row row-1">
+            <div class="col-4 text-left"><h5>{{trainCurrenyDetail.fromSta}}&nbsp;<span>{{trainCurrenyDetail.startTime}}</span></h5><span>--</span>{{trainCurrenyDetail.dateOfJourney}}</div>
+            <div class="col-1 text-center">1</div>
+            <div class="col-4 text-center"><h5>{{trainCurrenyDetail.toSta}}&nbsp;<span>{{trainCurrenyDetail.endTime}}</span></h5><span>--</span>{{trainCurrenyDetail.endOfJourney}}</div>
+            <div class="col-2 text-center"><span class="h6 text-warning">AVAIL {{trainCurrenyDetail.availSta}}</span></div>
+        </div>
+        <div class="row text-center tob-bott">
+            <p> {{ticketReview.passengers.length}} Adult | {{ticketReview.classType}} ({{ticketReview.clasaa}}) |Boarding At {{trainCurrenyDetail.fromSta}}}|Boarding Date {{trainCurrenyDetail.dateOfJourney}}</p>
+        </div>
+
+    </div>
+
+    <div class="accordion mt-5" id="accordionExample">
+     
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Passenger Details
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div class="container-fluid">
+                    <div class="row" *ngFor="let psg of ticketReview.passengers; let i=index ">
+                        <div class="col-1"><p><i>{{i+1}}</i></p></div>
+                        <div class="col-2 d-flex">
+                            <h6><i> {{psg.passengerName}}</i></h6>
+                        </div>
+                        <div class="col-1">          
+                            <p>{{psg.passengerAge}}</p> 
+                        </div>
+                        <div class="col-1">{{psg.gender}}</div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+      <div class="container">
+        <p>Your Ticket Detail will be Share to {{ticketReview.mobileNo}} </p>
+      </div>
+
+      <div class="container mt-3 text-center">
+        <div class="row">
+          <button class="btn btn-danger col-3">Back</button>
+          <button class="btn btn-primary col-3 ml-3" (click)="paymentPage()">Continue</button>
+          <div class="col"></div>
+        </div>
+   
+      </div>
+
+
+</div>
+
+

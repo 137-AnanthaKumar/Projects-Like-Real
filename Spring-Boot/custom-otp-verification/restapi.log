@@ -1,0 +1,45 @@
+2022-05-16 12:48:15 [main] INFO  c.example.restapi.RestapiApplication - INFO  c.e.r.RestapiApplication:55 - Starting RestapiApplication using Java 17.0.2 on INBL01LAP20095 with PID 27404 (C:\Users\thanga.kumar\TRAING PROJECT\OTPVERIFICATION\restapi\target\classes started by thanga.kumar in C:\Users\thanga.kumar\TRAING PROJECT\OTPVERIFICATION\restapi)
+2022-05-16 12:48:15 [main] INFO  c.example.restapi.RestapiApplication - INFO  c.e.r.RestapiApplication:640 - No active profile set, falling back to 1 default profile: "default"
+2022-05-16 12:48:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - INFO  o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-16 12:48:15 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - INFO  o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 64 ms. Found 5 JPA repository interfaces.
+2022-05-16 12:48:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2022-05-16 12:48:16 [main] INFO  o.a.catalina.core.StandardService - INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-05-16 12:48:16 [main] INFO  o.a.catalina.core.StandardEngine - INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-16 12:48:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2022-05-16 12:48:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:290 - Root WebApplicationContext: initialization completed in 1231 ms
+2022-05-16 12:48:16 [main] INFO  o.h.jpa.internal.util.LogHelper - INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-16 12:48:16 [main] INFO  org.hibernate.Version - INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-16 12:48:16 [main] INFO  o.h.annotations.common.Version - INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-16 12:48:16 [main] INFO  com.zaxxer.hikari.HikariDataSource - INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-05-16 12:48:17 [main] INFO  com.zaxxer.hikari.HikariDataSource - INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-05-16 12:48:17 [main] INFO  org.hibernate.dialect.Dialect - INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-16 12:48:17 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-16 12:48:17 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-16 12:48:18 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-16 12:48:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-16 12:48:18 [main] INFO  c.example.restapi.RestapiApplication - INFO  c.e.r.RestapiApplication:61 - Started RestapiApplication in 3.838 seconds (JVM running for 4.365)
+2022-05-16 12:49:01 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-05-16 12:49:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - INFO  o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2022-05-16 12:49:01 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - INFO  o.s.w.s.DispatcherServlet:547 - Completed initialization in 1 ms
+2022-05-16 12:49:17 [http-nio-8080-exec-4] INFO  c.e.restapi.service.UserService - INFO  c.e.r.s.UserService:24 - User Creted add
+2022-05-16 12:49:17 [http-nio-8080-exec-4] INFO  c.e.r.controller.AdminController - INFO  c.e.r.c.AdminController:43 - User Created 
+2022-05-16 14:27:38 [main] INFO  c.example.restapi.RestapiApplication - INFO  c.e.r.RestapiApplication:55 - Starting RestapiApplication using Java 17.0.2 on INBL01LAP20095 with PID 5564 (C:\Users\thanga.kumar\TRAING PROJECT\OTPVERIFICATION\restapi\target\classes started by thanga.kumar in C:\Users\thanga.kumar\TRAING PROJECT\OTPVERIFICATION\restapi)
+2022-05-16 14:27:38 [main] INFO  c.example.restapi.RestapiApplication - INFO  c.e.r.RestapiApplication:640 - No active profile set, falling back to 1 default profile: "default"
+2022-05-16 14:27:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - INFO  o.s.d.r.c.RepositoryConfigurationDelegate:132 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-05-16 14:27:38 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - INFO  o.s.d.r.c.RepositoryConfigurationDelegate:201 - Finished Spring Data repository scanning in 75 ms. Found 5 JPA repository interfaces.
+2022-05-16 14:27:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - INFO  o.s.b.w.e.t.TomcatWebServer:108 - Tomcat initialized with port(s): 8080 (http)
+2022-05-16 14:27:39 [main] INFO  o.a.catalina.core.StandardService - INFO  o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-05-16 14:27:39 [main] INFO  o.a.catalina.core.StandardEngine - INFO  o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-16 14:27:39 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - INFO  o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2022-05-16 14:27:39 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - INFO  o.s.b.w.s.c.ServletWebServerApplicationContext:290 - Root WebApplicationContext: initialization completed in 1396 ms
+2022-05-16 14:27:39 [main] INFO  o.h.jpa.internal.util.LogHelper - INFO  o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-05-16 14:27:39 [main] INFO  org.hibernate.Version - INFO  o.h.Version:44 - HHH000412: Hibernate ORM core version 5.6.7.Final
+2022-05-16 14:27:40 [main] INFO  o.h.annotations.common.Version - INFO  o.h.a.c.Version:56 - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-05-16 14:27:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - INFO  c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-05-16 14:27:40 [main] INFO  com.zaxxer.hikari.HikariDataSource - INFO  c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-05-16 14:27:40 [main] INFO  org.hibernate.dialect.Dialect - INFO  o.h.d.Dialect:175 - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-05-16 14:27:40 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - INFO  o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-05-16 14:27:40 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean:437 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-05-16 14:27:41 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:219 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-05-16 14:27:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - INFO  o.s.b.w.e.t.TomcatWebServer:220 - Tomcat started on port(s): 8080 (http) with context path ''
+2022-05-16 14:27:41 [main] INFO  c.example.restapi.RestapiApplication - INFO  c.e.r.RestapiApplication:61 - Started RestapiApplication in 3.955 seconds (JVM running for 4.539)

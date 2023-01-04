@@ -1,0 +1,1 @@
+      "start": "set PORT=8000 && react-scripts start",

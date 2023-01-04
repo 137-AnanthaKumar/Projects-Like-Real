@@ -1,0 +1,24 @@
+<button (click)="myevent()">{{btnname}}</button>
+<p *ngIf="b; else test" >directives works!</p>
+
+<hr/>
+<ng-template #test>
+    <div>Hellooooooo
+
+
+        <button (click)="myevent1()">{{"NEW"}}</button>
+        <div *ngIf="c ; else goyu1"> <ul>
+            <li>HHGG</li>
+            <li>HHGG</li>
+            <li>HHGG</li>
+
+            <li>HHGG</li>
+
+        </ul></div>
+
+<ng-template #goyu1> <div >No</div></ng-template>
+       
+
+    </div>
+    {{"HEllo"}}
+</ng-template>

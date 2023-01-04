@@ -1,0 +1,90 @@
+
+<div>
+<div class="toolbar container-fluid" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="https://csrbox.org/company/cmp_logo/1614760813logo%20(1).png"
+  />
+  <span>Welcome</span>
+    <div class="spacer"></div>
+  
+   <div>  <i class="fa fa-bars" style="font-size: 3rem;"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i></div>
+
+   
+    <div> 
+
+   
+
+<div class="offcanvas offcanvas-end text-dark" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel"> 
+      <div *ngIf="isLoggeIs; else loginbtn">
+      <a routerLink="myaccount">MyAccount</a>
+      <div><button class="btn btn-outlook-primary" (click)="onLogOut()">Logout</button></div>
+    </div>
+      
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
+</div>
+      <ng-template #loginbtn>
+        <button class="btn btn-outlook-primary">  <h6 class="text-dark"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+          LOGIN
+          </h6></button>
+    
+    
+
+    </ng-template>
+  </div>
+    <div></div>
+ <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade"  id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" class="text-primary">Login To TrainBooking Application</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body mx-3 text-primary">
+        <div class="md-form mb-3">
+         <input type="text" id="defaultForm-text" [(ngModel)]="loginData.username" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-text">Your UserName</label>
+        </div>
+
+        <div class="md-form mb-3">
+        
+          <input type="password" id="defaultForm-pass" [(ngModel)]="loginData.password" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        
+        <button type="button" class="btn btn-primary" (click)="onLogin(loginData,false)">LogIn</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  
+</div>
+<div class="container1">
+ <!-- //{item}="searchDate" -->
+  <router-outlet ></router-outlet>
+</div></div>
+
+
+  <!-- Resources -->
+ 
+
+
+

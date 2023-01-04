@@ -1,0 +1,26 @@
+.trainHead{
+  background-color: blue;
+    color:white;
+    height: 30px;
+    
+}
+.tob-bott{
+    background-color: lightblue;
+}
+.row-1{
+    height: 70px;
+    color: black;
+    
+}
+h5 > span{
+    font-size: medium;
+}
+.top-1{
+    box-shadow: 0 1px 10px #c3c3c3;
+}
+.headdd{
+    background-color: aqua;
+   box-shadow:  0 1px 10px #c3c3c3;
+    color: blue;
+    font-size: larger;
+}

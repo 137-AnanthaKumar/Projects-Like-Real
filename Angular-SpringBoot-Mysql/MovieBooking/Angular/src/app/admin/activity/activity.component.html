@@ -1,0 +1,45 @@
+
+<div >
+  <nav   aria-label="Page navigation example" >
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="coClickPrevious()" >Previous</a></li>
+    <div class="page-item" *ngFor="let a of numberOfPage">
+      <li class="page-item" (click)="interMediateClice(a)" ><a class="page-link" [ngClass]="a==currentPage? 'currentpage' : '' " >{{a}}</a></li>
+    </div>
+      <li class="page-item"><a class="page-link" (click)="onClickNext()">Next</a></li>
+    </ul>
+  </nav>
+  <table class="table"><thead >
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Activities</th>
+      <th scope="col">DoneBy</th>
+      <th scope="col">Role</th>
+    </tr>
+  </thead>
+</table>
+  <div class="tab-head">
+    <table class="table">
+
+      <tbody *ngFor="let track of trackingLog" class="appactivity">
+        <tr class="speccccccc">
+          <th scope="row">{{track.id}}</th>
+          <td>{{track.date}}</td>
+          <td>{{track.time}}</td>
+          <td><p>{{track.whatdone}}</p></td>
+          <td>{{track.whodid}}</td>
+          <td>{{track.role}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+  </div>
+
+
+  </div>
+

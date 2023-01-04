@@ -1,0 +1,30 @@
+
+<div class="menu-bar">
+  <h1 class="logo">LogicLove</h1>
+
+  <h3>{{roleNav}}</h3>
+  <ul>
+    <li><a routerLink="home">Home</a></li>
+    <li><a routerLink="movies" >Movies</a></li>
+    <li><a routerLink="ticketsearch">View MyTicket</a></li>
+
+    <li><a href="#">Pages <i class="fas fa-caret-down"></i></a>
+        <div class="dropdown-menu">
+            <ul>
+              <li *ngIf="!logoutoption"><a routerLink="adminlogin">Admin Login</a></li>
+              <li *ngIf="logoutoption"><a routerLink="admin">Control</a></li>
+              <li *ngIf="logoutoption"><a  (click)="logOut()" >LogOut</a></li>
+
+
+            </ul>
+          </div>
+    </li>
+    <li><a routerLink="#">LoginMyAccount</a></li>
+
+  </ul>
+</div>
+
+
+<div class="backgrounf">
+<router-outlet></router-outlet>
+</div>

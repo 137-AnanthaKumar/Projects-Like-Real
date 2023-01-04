@@ -1,0 +1,52 @@
+.hero-img{
+    width:100%;
+    background:rgba(0,0,0,0.5); 
+    height:60vh;
+    position:relative;
+        background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-img
+{
+content: "";
+/* background: url("https://thumbs.dreamstime.com/b/honeyomb-yellow-black-abstract-d-hexagon-background-67156410.jpg"); */
+background: url(https://media.istockphoto.com/photos/magnifier-and-question-mark-on-yellow-background-picture-id1143749430?k=20&m=1143749430&s=612x612&w=0&h=4DHNwWjXrb-lwhkgCCQRDHaCfsjs3gxFntAK-9w4q4Y=);
+/* background: url("../assets/Contact.png"); */
+/* background-image:url("../assets/intro-bg.jpg") ; */
+/* background:red; */
+/* background-color:transparent; */
+background-size: cover; 
+background-repeat: no-repeat;
+height: 400px;
+width: 600px;
+position:relative;
+top:0;
+left:400px;
+/* z-index: -1; */
+opacity: 0.8;
+}
+
+.heading{
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img h4{
+    font-size: 2.4rem;
+}
+
+.hero-img p{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+@media screen and(max-width:640px) {
+.hero-img h4 {
+        font-size: 2rem;
+   
+}
+}

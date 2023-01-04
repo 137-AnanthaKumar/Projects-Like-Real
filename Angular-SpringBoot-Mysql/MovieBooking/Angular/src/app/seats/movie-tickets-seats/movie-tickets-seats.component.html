@@ -1,0 +1,116 @@
+<div class="container-fluid bg-white">
+  <div class="row">
+    <div class="col-1">
+      <div>--</div>
+      <tr *ngFor="let b of line">
+        <p class="left-side">{{ b }}</p>
+      </tr>
+    </div>
+
+    <div class="col-8">
+      <div class="container-fluid">First Class {{ details.prize }}</div>
+      <div>
+        <tr *ngFor="let b of line">
+          <td *ngFor="let a of numbers">
+            <div (click)="selectSeat(b + a)">
+              <img
+                *ngIf="avaiable(b + a) === 'filled'"
+                class="sofaicon"
+                src="../../../assets/images11.png"
+              />
+              <img
+                *ngIf="avaiable(b + a) === 'avail'"
+                class="sofaicon"
+                src="../../../assets/images.png"
+              />
+              <img
+                *ngIf="avaiable(b + a) === 'path'"
+                class="sofaicon_path"
+                src="../../../assets/images.png"
+              />
+              <img
+                *ngIf="avaiable(b + a) === 'none'"
+                class="sofaicon"
+                src="../../../assets/sofa_icon.png"
+              />
+            </div>
+          </td>
+        </tr>
+      </div>
+      <div class="container screen">
+        <div class="container screen2 text-center">screen</div>
+      </div>
+
+      <div class="container d-flex">
+        <div class="col-3">
+          selected
+          <img class="sofaicon1" #test src="../../../assets/images.png" />
+        </div>
+        <div class="col-3">
+          available
+          <img class="sofaicon1" src="../../../assets/sofa_icon.png" />
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div>
+        <iframe width="100%" height="100%" frameBorder="0" [src]="urlSafe"></iframe>
+
+      </div>
+
+
+      <div>
+        <h2>
+          <!-- {{details.trainlerUrl}} -->
+          <strong>{{ details.movieName }}(({{ details.movieCast }}))</strong
+          >screen-{{ details.screen }}
+        </h2>
+        <hr />
+        <p>{{ details.description }}</p>
+        <hr />
+      </div>
+      <div class="container">
+        <h6>SHOW TIME</h6>
+        <h4>{{ details.time }} || {{ details.date }}</h4>
+      </div>
+      <hr />
+      <div class="row">
+        <div *ngFor="let seats of moviedetails.selectedSeats" class="col-md-3">
+          <div class="col build" (click)="selectSeat(seats)">
+            <h6 style="color: orange">{{ seats }}</h6>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container pt-3">
+        <div class="row">
+          <div class="col-3">
+            <p>{{ moviedetails.selectedSeats.length }}-- seats</p>
+          </div>
+          <div class="col"></div>
+          <div class="col"></div>
+          <div class="col-5">
+            <h5 style="color: orange">
+              Rs: {{ moviedetails.selectedSeats.length * details.prize }}
+            </h5>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="container">
+        <div class="row">
+          <button
+            class="btn btn-danger"
+            *ngIf="moviedetails.selectedSeats.length > 0"
+            (click)="onContinue()"
+          >
+            Continue
+          </button>
+        </div>
+        <div class="row">
+          <div class="btn btn-info mt-4">Cancel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

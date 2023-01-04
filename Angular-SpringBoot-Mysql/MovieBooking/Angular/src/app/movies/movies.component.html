@@ -1,0 +1,78 @@
+
+<div class="">
+  <div class="container-fluid">
+
+    <div>
+      <!-- <div *ngIf="!moviesForThisDay.error"> -->
+        <!-- <p class="showtitle">Shows</p> -->
+        <!-- <img class="showtitle" src="../../assets/now_showing2.jpg"> -->
+        <div class="showtit">
+          <h1>NOW SHOWING</h1>
+        </div>
+        <br>
+       <div class="row">
+        <!-- <div class="col-1 specuddjf" (click)="newDateMovie(0)">{{date_am_pm}} </div> -->
+
+        <div class="col d-flex">
+          <div *ngFor="let day of nextDaysFromtdy;let i=index" >
+            <div  [ngClass]="i==number ? 'row specuddjf1' : 'row specuddjf'"  >
+              <div class="col-1 otherdates" (click)="newDateMovie(i)">
+                {{day}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+       </div>
+       <hr>
+       <div class="container mt-2">
+        <div class="input-group">
+          <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+
+          </div>
+
+        </div>
+       </div>
+       <hr>
+       <ng-template #text>
+        <div class="container">No Movies Found</div>
+       </ng-template>
+ <div class="container" *ngIf="!error; else text">
+
+  <div  *ngFor="let a of moviesForThisDay.obj" class="">
+
+    <div class="container show_time">
+      <div class="row details">
+        <div class="col-3">
+          <h6> {{a.movieName}}</h6>
+        </div>
+        <div class="time_row">
+          <div class="time_in_row">
+            <div *ngFor="let time of a.times" class="times">
+              <h6 (click)="perticularMovieShow(date,time,a.movieName)" class="hdshdhjhjsf">{{time}}</h6>
+              <!-- <app-movie-tickets-seats></app-movie-tickets-seats> -->
+            </div>
+
+          </div>
+        </div>
+        <div class="col">
+
+        </div>
+      </div>
+
+    </div> <hr>
+
+
+  </div>
+
+ </div>
+
+
+
+
+      <!-- </div> -->
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.container1{
+  width: 100%;
+  padding: 5rem 30rem;
+  background-color: #e1efc7a1;
+}
+.container_booking{
+  display: contents;
+
+}
+#rows{
+
+  font-size: 20px;
+  color: #37d600;
+  text-decoration: underline;
+  font-family: math;
+
+}
+.row_line{
+  font-size: 15px;
+}
+#maincore{
+  padding: 40px;
+}
+.row{
+  font-size: 20px;
+
+}
+.col-6{
+  /* font-size: 20px;
+  padding: 0rem 5rem; */
+  color: #f26161;
+  font-family: ui-rounded;
+}
+.row{
+  display: flex;
+}

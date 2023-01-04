@@ -1,0 +1,164 @@
+<div class="container bg-col">
+
+ <div class="container ">
+      <div class="container-fluid form-menu d-flex">
+         <h3 (click)="formControl('basic')">BASIC DETAIL</h3>  
+         <h3 (click)="formControl('personal')">PERSONAL DETAILS</h3>
+       
+      </div>
+<pre></pre>
+      <div  [ngSwitch]="form" >
+
+       
+        <div class="row g-3" *ngSwitchDefault>
+            <div class="col-md-6">
+              <label for="validationDefault01" class="form-label">Full name</label>
+              <input type="text"  [(ngModel)]="register.fullName" class="form-control" id="validationDefault01"  required>
+            </div>
+           
+            <div class="col-md-6">
+              <label for="validationDefaultUsername" class="form-label">Username</label>
+              <div class="input-group">
+                <input type="text" class="form-control"   [(ngModel)]="register.username" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationDefault03" name="email" class="form-label">Email</label>
+              <input type="email" class="form-control"  [(ngModel)]="register.email"  id="validationDefault03" required>
+            </div>
+            <div class="col-md-3">
+              <label for="validationDefault04" class="form-label">Age</label>
+              <select class="form-select"  [(ngModel)]="register.age"  id="validationDefault04" required>
+                <option selected disabled value="">Choose...</option>
+                <option *ngFor='let in of agecounter(100) ;let i =index'>{{i}}</option>
+              </select>
+            </div>
+            <div class="col-7">
+                <label for="validationDefault08" class="form-label">Phone Number</label>
+                <input type="text"  [(ngModel)]="register.mobileNo" class="form-control" id="validationDefault08" required>
+              </div>
+              <div class="col-md-6">
+                <label for="validationDefault054"  class="form-label">PassWord</label>
+                <input type="password"  [(ngModel)]="register.password" class="form-control" id="validationDefault054" required>
+              </div>
+              <div class="col-md-6">
+                <label for="validationDefault03" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="validationDefault03" required>
+              </div>
+          
+            <div class="col-12">
+              <button class="btn btn-primary" (click)="formControl('personal')" type="submit">Next</button>
+            </div>
+        </div>
+
+      
+
+          <div class="row g-3 form-container" *ngSwitchCase="'personal'">
+            <div class="col-7">
+              <label for="validationServer01"    class="form-label">Author Number</label>
+              <input type="number" class="form-control is-valid"  [(ngModel)]="register.authorno" id="validationServer01" value="Mark" required>
+              <!-- <div class="valid-feedback">
+                Looks good!
+              </div> -->
+            </div>
+            <div class="col-md-4">
+              <label for="validationServer02" class="form-label">PinCode</label>
+              <input type="text"  [(ngModel)]="register.pincode" class="form-control is-valid" id="validationServer02"  required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <div class="col-md-4">
+              <label for="validationServerUsername" class="form-label">Door No</label>
+              <div class="input-group has-validation">
+                <input type="text"  [(ngModel)]="register.doorNo" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                  Please choose a username.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationServer03" class="form-label">Street Name</label>
+              <input type="text" [(ngModel)]="register.streetName" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+              <div id="validationServer03Feedback" class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationServer05" class="form-label">Area</label>
+                <input type="text"  [(ngModel)]="register.area"  class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                <div id="validationServer05Feedback" class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+              <div class="col-md-3">
+                <label for="validationServer05" class="form-label">District</label>
+                <input type="text" [(ngModel)]="register.district" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+                <div id="validationServer05Feedback" class="invalid-feedback">
+                  Please provide a valid zip.
+                </div>
+              </div>
+            <div class="col-md-3">
+              <label for="validationServer04" class="form-label">State</label>
+              
+                <select class="form-select inputbox" [(ngModel)]="register.state" aria-label="Default select example">
+                  
+                    <option *ngFor="let c of states" value="c">{{c.name}}</option>
+                   
+                  </select>
+         
+              <div id="validationServer04Feedback" class="invalid-feedback">
+                Please select a valid state.
+              </div>
+            </div>
+            <div class="col-md-3">
+                <label  class="form-label">Nation</label>
+                
+                    <select class="form-select inputbox"  [(ngModel)]="register.nation" aria-label="Default select example">
+                      
+                        <option *ngFor="let c of countries" value="c">{{c.name}}</option>
+                       
+                      </select>
+             
+               
+              </div>
+           
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+                <label class="form-check-label" for="invalidCheck3">
+                  Agree to terms and conditions
+                </label>
+                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary" (click)="formSubmit()" type="submit">Submit form</button>
+            </div>
+        </div>
+
+        <div class="row" *ngSwitchCase="'loading'">
+             loading.....
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+     
+
+
+
+    </div>
+
+
+
+
+
+</div>

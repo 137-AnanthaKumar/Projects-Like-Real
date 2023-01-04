@@ -1,0 +1,13 @@
+<div class="home_container">
+  <div><button class="redirectButton" routerLink="movies">Click here to book your tickets</button></div>
+  <div>
+    <div class="images_container" *ngFor="let image of theatreImages;let i=index">
+      <img class="container_images" src="{{image.url}}" *ngIf="i===currentImage">
+    </div>
+    <div class="image_dots" *ngIf="active">
+      <button class="dots" *ngFor="let dot of theatreImages;let i=index" (click)="selectImage(i)">
+      </button>
+    </div>
+  </div>
+
+</div>

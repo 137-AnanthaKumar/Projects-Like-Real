@@ -1,0 +1,273 @@
+<div class="d-flex">
+  <div class="align">
+    <div class="">
+      <div [ngSwitch]="adminpage">
+        <div class="width-nav">
+          <div class="left-nav">
+            <div class="row-b">
+              <!-- <div class="col-2-b" [ngClass]="navpage==5? 'col-2-b-1':'col-2-b'" (click)="swithctap('bookticket')">
+            <p>New Movie</p>
+          </div> -->
+              <div *ngIf="!changePass"
+                class="col-2-b"
+                [ngClass]="navpage == 1 ? 'col-2-b-1' : 'col-2-b'"
+                (click)="swithctap('addnew')"
+              >
+                <p>New Movie</p>
+              </div>
+
+              <div  *ngIf="!changePass"
+                class="col-2-b"
+                [ngClass]="navpage == 3 ? 'col-2-b-1' : 'col-2-b'"
+                (click)="swithctap('table')"
+              >
+                <p>Running Movie</p>
+              </div>
+              <div
+                class="col-2-b"
+                *ngIf="manEmployee('emp')"
+                [ngClass]="navpage == 2 ? 'col-2-b-1' : 'col-2-b'"
+                (click)="swithctap('single-table')"
+              >
+                <p>Employees</p>
+              </div>
+              <div
+                class="col-2-b"
+                *ngIf="manEmployee('fin')"
+                [ngClass]="navpage == 4 ? 'col-2-b-1' : 'col-2-b'"
+                (click)="swithctap('finance')"
+              >
+                <p>Finance</p>
+              </div>
+              <div
+                class="col-2-b"
+                *ngIf="manEmployee('act')"
+                [ngClass]="navpage == 5 ? 'col-2-b-1' : 'col-2-b'"
+                (click)="swithctap('activity')"
+              >
+                <p>Activity</p>
+              </div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'addnew'" class="container d-flex">
+            <div class="right-nav">
+              <p (click)="switchtap1('addmovieform')">Add New</p>
+              <p (click)="switchtap1('extend')">Extend Movie</p>
+              <p (click)="switchtap1('old-extend')">From Old</p>
+            </div>
+            <div class="left" [ngSwitch]="addingmovie">
+              <div *ngSwitchCase="'addmovieform'">
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">MovieName</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="addmovie.movieName"
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Enter MovieName"
+                      />
+                      <small id="emailHelp" class="form-text text-muted"
+                        >Movie name should be shortform</small
+                      >
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <label
+                      >Days
+                      <select
+                        class="form-select form-select mb-3"
+                        [(ngModel)]="addmovie.days"
+                        aria-label=".form-select-lg example"
+                        placeHolder="Number of Days"
+                      >
+                        <option value="" selected>Number Of Days</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="4">Five</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="col-3">
+                    <label>Screens</label>
+                    <select
+                      class="form-select form-select mb-3"
+                      [(ngModel)]="addmovie.screen"
+                      aria-label=".form-select-lg example"
+                    >
+                      <option>SELECT SCREEN</option>
+
+                      <option *ngFor="let a of screens">{{ a }}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-4">
+                    <label for="">CERTIFICATE</label>
+                    <select
+                      class="form-select form-select mb-3"
+                      [(ngModel)]="addmovie.movieCast"
+                      aria-label=".form-select-lg example"
+                    >
+                      <option value="">Movie Cast</option>
+                      <option value="1">U</option>
+                      <option value="2">U/A</option>
+                      <option value="3">A</option>
+                    </select>
+                  </div>
+                  <div class="col-4">
+                    <label for="">DATE</label>
+                    <input
+                      type="date"
+                      id="datee"
+                      name="birthday"
+                      [(ngModel)]="addmovie.date"
+                      min="2022-10-31"
+                      class="date"
+                    />
+                  </div>
+                  <div class="col-4">
+                    <label for="">TIME</label>
+                    <select
+                      class="form-select form-select mb-3"
+                      [(ngModel)]="addmovie.time"
+                    >
+                      <option value="" selected>Time</option>
+                      <option value="00:15:00">12:15 AM</option>
+                      <option value="00:30:00">12:30 AM</option>
+                      <option value="04:15:00">04:15 AM</option>
+                      <option value="08:15:00">08:30 AM</option>
+                      <option value="08:45:00">08:45 AM</option>
+                      <option value="12:15:00">12:00 PM</option>
+                      <option value="12:45:00">12:45 PM</option>
+                      <option value="15:15:00">03:15 PM</option>
+                      <option value="15:45:00">03:45 PM</option>
+                      <option value="16:45:00">04:45 PM</option>
+                      <option value="20:45:00">08:45 PM</option>
+                      <option value="20:30:00">08:30 PM</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div>
+                    <div class="input-group-prepend">
+                      <span>Description</span>
+                    </div>
+                    <textarea
+                      class="form-control"
+                      [(ngModel)]="addmovie.description"
+                      aria-label="With textarea"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="input-group-sm mb-3">
+                      <label for="">PRICE PER PERSON</label>
+                      <select
+                        class="form-select form-select mb-3"
+                        [(ngModel)]="addmovie.prize"
+                        aria-describedby="inputGroup-sizing-sm"
+                      >
+                        <option value="120">120</option>
+                        <option value="150">150</option>
+                        <option value="200">200</option>
+                      </select>
+                    </div>
+                    <div class="input-group-sm mb-3">
+                      <label for="">BOOKING OPEN</label>
+                      <select
+                        class="form-select form-select mb-3"
+                        [(ngModel)]="addmovie.bookingOpened"
+                        aria-label=".form-select-lg example"
+                      >
+                        <option value="true">OPEN</option>
+                        <option value="false">NO OPEN</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Trailer</label>
+                      <input
+                        type="text"
+                        [(ngModel)]="addmovie.trainlarUrl"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        aria-describedby="emailHelp"
+                        placeholder="Enter Trailer Url"
+                      />
+                      <small id="emailHelp" class="form-text text-muted"
+                        >Trailer url should be shortform</small
+                      >
+                    </div>
+
+                    <div class="input-group input-group-sm mb-3">
+                      <label for=""
+                        >MOVIE STATUS
+                        <select
+                          class="form-select form-select mb-3"
+                          [(ngModel)]="addmovie.movieStatus"
+                          aria-label=".form-select-lg example"
+                        >
+                          <option value="1">UPCOMING</option>
+                          <option value="2">RUNNING</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="container">
+                  <button class="btn btn-primary" (click)="submitmovie()">
+                    SUBMIT
+                  </button>
+                </div>
+              </div>
+
+              <div *ngSwitchCase="'addresponse'" class="container left-1">
+                <p>STATUS : {{ respons.msg }}</p>
+                <p>FAILED : {{ respons.failed }}</p>
+                <p>SUCESS : {{ respons.sucess }}</p>
+                <p>CHANGE DATE : {{ respons.chengeDate }}</p>
+                <button class="btn btn-primary">NEW</button>
+              </div>
+
+              <div *ngSwitchCase="'extend'">EXTEND</div>
+              <div *ngSwitchCase="'old-extend'">FROM OLD</div>
+            </div>
+          </div>
+
+          <div *ngSwitchCase="'table'" class="container left-1">
+            <app-table></app-table>
+          </div>
+
+          <div *ngSwitchCase="'single-table'" class="container left-1">
+            <app-employee
+              [role]="employeeRole"
+              [code]="employeeCode"
+              [changePass]="changePass"
+            ></app-employee>
+          </div>
+
+          <div *ngSwitchCase="'activity'" class="container left-1">
+            <app-activity></app-activity>
+          </div>
+
+          <div *ngSwitchCase="'finance'" class="container left-1">
+            <app-finance></app-finance>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-chatbox></app-chatbox>
+</div>

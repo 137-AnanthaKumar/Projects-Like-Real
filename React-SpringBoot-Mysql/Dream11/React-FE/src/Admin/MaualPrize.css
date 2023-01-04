@@ -1,0 +1,22 @@
+#clm1{
+    display: flex;
+}
+#clm1 > div{
+    margin: 5px 5px 5px 0px;
+    background-color: antiquewhite;
+    height: 30px;
+    align-items: center;
+    margin-right: 2px;
+    position: relative;
+
+}
+.classnameeeee{
+    position: absolute;
+    margin-top:7px;
+}
+.withff{
+    width: 70px;
+}
+.vanakam{
+    width: 70px;
+}

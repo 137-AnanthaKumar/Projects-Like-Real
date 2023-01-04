@@ -1,0 +1,27 @@
+
+.centet-pro{
+  margin-left: 20px;
+}
+.bg-main{
+    background-color: aqua;
+   
+}
+.spgfg{
+   padding: 10px;
+    color: black;
+    width: 200px;
+}
+.container-1{
+   box-shadow: 0 1px 10px #c3c3c3;
+    background-color: azure;
+}
+.accordion-item{
+    margin-top: 15px;
+    border-radius: 0%;
+}
+.form-control{
+   border-radius: 0%;
+}
+.row-2,.row-3{
+    margin-top: 10px;
+}

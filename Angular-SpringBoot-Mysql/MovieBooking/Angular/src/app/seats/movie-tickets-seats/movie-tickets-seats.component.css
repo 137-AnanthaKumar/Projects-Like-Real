@@ -1,0 +1,63 @@
+.sofaicon{
+  width: 2rem;
+  height: 2rem;
+  padding: 11%;
+}
+.sofaicon1{
+  height: 50px;
+  width: 50px;
+}
+
+.left-side{
+  width: 2.5rem;
+  height: 1.6rem;
+  padding: 1.5%;
+}
+
+.td_row{
+  padding: 1rem;
+}
+.total_seats{
+  display: flex;
+}
+.screen{
+  height: 50px;
+  width: 200px;
+
+}
+.screen2{
+  margin-top: 30px;
+  margin-left: -300px;
+  width: 700px;
+    height: 40px;
+  background-color: gray;
+  border-radius: 2px;
+}
+.sofaicon_path{
+  display: none;
+}
+.fgfdhghgh{
+  align-items: flex-end;
+}
+.build > h6{
+  margin-left: 20px;
+
+  padding: 3px;
+
+
+}
+.grid{
+  display: grid;
+  column-gap: 50px;
+}
+.build{
+
+ border: 1px solid  #4caf50;
+margin-top: 50px;
+align-items: center;
+
+ color: #4caf50;
+ width: 70px;
+ height: 30px;
+
+}

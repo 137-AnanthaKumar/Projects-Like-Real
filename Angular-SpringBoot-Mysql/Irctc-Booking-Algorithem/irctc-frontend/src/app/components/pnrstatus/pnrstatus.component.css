@@ -1,0 +1,53 @@
+.divheader{
+    background-color: blue;
+    text-align: center;
+    color: white;
+    
+   
+}
+.bg-colorpnr{
+    background-color: white;
+    height:fit-content;
+}
+.thead{
+    background-color: blue;
+    color: wheat;
+}
+.fin{
+    
+    margin-bottom: 30px;
+}
+.sercbox{
+    height: 100px;
+}
+.searchcontent{
+   
+    color:blue;
+    width: 300px;
+    margin-top: 100px;
+    
+    z-index: 3;
+    position: relative;
+    margin-left: 40%;
+   
+}
+.searchcontent::before{
+    content: attr(data-text);
+    position: absolute;
+    color:blue;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #fff;
+    animation: animate 4s linear infinite;
+    filter: drop-shadow(0 0 20px #fff)  drop-shadow(0 0 50px #fff);
+}
+@keyframes animate {
+    0%,10%,100%{
+        width: 0%;
+    }
+    70%,90%{
+        width: 100%;
+    }
+    
+}

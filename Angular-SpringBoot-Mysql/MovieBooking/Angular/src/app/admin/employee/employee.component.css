@@ -1,0 +1,467 @@
+.controlbtn {
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  padding: 10px;
+}
+.grid-container {
+  display: grid;
+  row-gap: 50px;
+  column-gap: 10px;
+  margin-left: -10px;
+  grid-template-columns: 270px 270px 270px;
+
+  padding: 10px;
+}
+
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+.modal-content{
+  width: 700px;
+}
+/* .modal-dialogal{
+  width: 900px;
+} */
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+.special {
+  color: white;
+  position: absolute;
+  background-color: blue;
+  z-index: 2;
+  width: 70px;
+  height: 50px;
+  border-bottom-left-radius: 50px;
+  margin-left: 178.5px;
+  border-top-right-radius: 5px;
+  margin-top: -20px;
+}
+.grid-item:hover {
+  background-color: rgb(174, 246, 114);
+  border: 1px solidrgba(246, 239, 239, 0.34);
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid-item:hover .special {
+  color: white;
+  position: absolute;
+  background-color: rgb(8, 8, 9);
+  z-index: 2;
+  width: 70px;
+  height: 50px;
+  border-bottom-left-radius: 50px;
+  /* margin-left: 178.5px; */
+  border-top-right-radius: 5px;
+  transition: 1s;
+  margin-top: -20px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(246, 239, 239, 0.34);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 10px;
+}
+.appactivity{
+  overflow: auto;
+  height: 500px;
+
+}
+.tab-head{
+  position: -webkit-sticky;
+  position: fixed;
+
+}
+.appactivity::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.appactivity {
+-ms-overflow-style: none;  /* IE and Edge */
+scrollbar-width: none;  /* Firefox */
+}
+.grid-item-mine{
+  background-color: rgba(68, 14, 14, 0.8);
+  border: 1px solid rgba(46, 11, 11, 0.34);
+  color: whitesmoke;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 10px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #28223f;
+  font-family: Montserrat, sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 100vh;
+  margin: 0;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+h6 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.card-container {
+  background-color: #231e39;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: #b3b8cd;
+  padding-top: 30px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  margin-left: 100px;
+  text-align: center;
+}
+
+.card-container .pro {
+  color: #231e39;
+  background-color: #febb0b;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.card-container .round {
+  border: 1px solid #03bfcb;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+button.primary {
+  background-color: #03bfcb;
+  border: 1px solid #03bfcb;
+  border-radius: 3px;
+  color: #231e39;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  padding: 10px 25px;
+}
+
+button.primary.ghost {
+  background-color: transparent;
+  color: #02899c;
+}
+
+.skills {
+  background-color: #1f1a36;
+  text-align: left;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.skills ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skills ul li {
+  border: 1px solid #2d2747;
+  border-radius: 2px;
+  display: inline-block;
+  font-size: 12px;
+  margin: 0 7px 7px 0;
+  padding: 7px;
+}
+
+footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 14px;
+  bottom: 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 999;
+}
+
+footer p {
+  margin: 10px 0;
+}
+
+footer i {
+  color: red;
+}
+
+footer a {
+  color: #3c97bf;
+  text-decoration: none;
+}
+.forms {
+  margin-left: 10px;
+}
+/* .animationForm{
+  background-color: #B3B8CD;
+  border: #053134;
+  width: 100px;
+  height: 200px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  animation: animate 2s infinite linear;
+} */
+.wrapper {
+  width: 400px;
+  margin: 40px 59px;
+  border: 4px solid #231e39;
+  overflow-x: hidden;
+  height: 400px;
+}
+
+.target {
+  font-weight: bold;
+  color: #fbfbfb;
+  animation-name: rightToLeft;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+
+  /* animation: rightToLeft 4.5s linear infinite; */
+}
+
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(400px);
+  }
+  80% {
+    transform: translateX(0px);
+  }
+}
+
+.login-box {
+  width: 100%;
+  position: absolute;
+
+  max-width: 525px;
+  margin-left: -100px;
+  min-height: 570px;
+  position: relative;
+  background: url(https://images.unsplash.com/photo-1507208773393-40d9fc670acf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80)
+    no-repeat center;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.login-snip {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 40px 30px 0px 50px;
+  background: rgba(0, 77, 77, 0.9);
+  /* margin-left: -190px; */
+}
+.login-snip .login,
+/* .login-snip .sign-up-form{
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	position:absolute;
+	transform:rotateY(180deg);
+	backface-visibility:hidden;
+	transition:all .4s linear;
+} */
+.login-snip .sign-in,
+.login-snip .sign-up,
+.login-space .group .check {
+  display: none;
+}
+.login-snip .tab,
+.login-space .group .label,
+.login-space .group .button {
+  text-transform: uppercase;
+}
+.login-snip .tab {
+  font-size: 22px;
+  margin-right: 15px;
+  padding-bottom: 5px;
+  margin: 0 15px 10px 0;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+.login-snip .sign-in:checked + .tab,
+.login-snip .sign-up:checked + .tab {
+  color: #fff;
+  border-color: #1161ee;
+}
+.login-space {
+  min-height: 345px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+.login-space .group {
+  margin-bottom: 15px;
+}
+.login-space .group .label,
+.login-space .group .input,
+.login-space .group .button {
+  width: 100%;
+  color: #fff;
+  display: block;
+}
+.login-space .group .input,
+.login-space .group .button {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.login-space .group input[data-type="password"] {
+  -webkit-text-security: circle;
+}
+.login-space .group .label {
+  color: #aaa;
+  font-size: 12px;
+}
+.login-space .group .button {
+  background: #1161ee;
+}
+.login-space .group label .icon {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  position: relative;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+}
+.login-space .group label .icon:before,
+.login-space .group label .icon:after {
+  content: "";
+  width: 10px;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  transition: all 0.2s ease-in-out 0s;
+}
+.login-space .group label .icon:before {
+  left: 3px;
+  width: 5px;
+  bottom: 6px;
+  transform: scale(0) rotate(0);
+}
+.login-space .group label .icon:after {
+  top: 6px;
+  right: 0;
+  transform: scale(0) rotate(0);
+}
+.login-space .group .check:checked + label {
+  color: #fff;
+}
+.login-space .group .check:checked + label .icon {
+  background: #1161ee;
+}
+.login-space .group .check:checked + label .icon:before {
+  transform: scale(1) rotate(45deg);
+}
+.login-space .group .check:checked + label .icon:after {
+  transform: scale(1) rotate(-45deg);
+}
+.login-snip .sign-in:checked + .tab + .sign-up + .tab + .login-space .login {
+  transform: rotate(0);
+}
+.login-snip .sign-up:checked + .tab + .login-space .sign-up-form {
+  transform: rotate(0);
+}
+
+.card {
+  width: 500px;
+  left: 100px;
+}
+
+::placeholder {
+  color: #b3b3b3;
+}

@@ -1,0 +1,35 @@
+#hello{
+    background-color: blue;
+    height: 50px;
+    color: white;
+    display: flex;
+}
+#hello div{
+    margin-top: 0px;
+    margin-left: 20px;
+}
+ a{
+    margin-top: 10px;
+    text-decoration: none;
+
+    color:whitesmoke;
+}
+#hello div:hover {
+    color: rgb(51, 6, 86);
+    background-color: white;
+    border-radius: 4px;
+    transform: rotateX(360);
+    transition: 0.7s;
+    cursor: pointer;
+
+}
+#hello div:hover  > a{
+    color: blue;
+    text-decoration: none;
+}
+#content{
+    margin-top: 3px;
+    background-color: gray;
+    color: black;
+    height: 100px;
+}

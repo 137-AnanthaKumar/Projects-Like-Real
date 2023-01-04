@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.navbar{
+  background-color: aquamarine;
+}
+.navbar .col .logo h1{
+  margin: 0;
+}
+.image-add .col-4 form label{
+  font-size: 40px;
+  font-weight: 700;
+  border: 1px solid red;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0 15px;
+  color: red;
+
+}
+.image-add .col-4 form .disable{
+  pointer-events: none;
+  background-color: rgb(176, 83, 7);
+
+}
+
+.container .gallary .all-images{
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-rows: auto; */
+  grid-template-rows: 230px;
+  /*grid-auto-flow: dense;   /* Use media Query to solve the image shrink problem*/
+  gap: 1em;
+
+}
+
+.container .gallary .all-images .photo-card img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.container .gallary .all-images .tall{
+grid-row: span 2;
+}
+.container .gallary .all-images .wide{
+grid-column: span 2
+
+}

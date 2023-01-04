@@ -1,0 +1,158 @@
+.bg-adjust{
+    background-color: #f5f5f5;
+}
+.bg-top{
+   position: absolute;
+   margin-top: 10px;
+    background-color: #213d77;
+    height: 100px;
+}
+.bg-top-content{
+  margin-top: 30px;
+}
+.main-contant{
+  border: 1px  solid lightblue;
+  margin-top: 120px;
+ 
+  position: absolute;
+  background-color: #f5f5f5;
+}
+.train-contaoner{
+  border: 1px solid brown;
+}
+.first-row{
+  background-color: #213d77;
+  color: white;
+  height: 40px;
+}
+.second-row{
+  height: 85px;
+}
+.smallbox{
+  width: 200px;
+  background-color: #fafafa;
+  border: 1px solid #e1e1e1;
+  height: 85px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+.box-refresh{
+cursor: pointer;
+color: black;
+}
+
+
+.loader{
+  position: absolute;
+   margin-top: 150px;
+  margin-left: 60px; 
+  top: 50%;
+  left: 90%;
+  z-index: 2;
+  color: blue;
+  transform: translateX(-50%) translateY(-50%);
+}
+.loader span:nth-child(1){
+  animation-delay: 0;
+}
+.loader span:nth-child(2){
+  animation-delay: 0;
+}
+.loader span:nth-child(3){
+  animation-delay: 0.1s;
+}
+.loader span:nth-child(4){
+  animation-delay: 0.2s;
+}
+.loader span:nth-child(5){
+  animation-delay: 0.3s;
+}
+.loader span:nth-child(6){
+  animation-delay: 0.4s;
+}
+.loader span{
+  height: 15px;
+  width: 15px;
+  margin-right: 3px;
+  background-color: #213d77;
+  display: inline-block;
+  border-radius: 50%;
+
+  transition: all .5s;
+  animation: animate 2s infinite;
+}
+.loader h1{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #213d77;
+  padding: auto;
+}
+
+@keyframes animate {
+0%{
+  border: 1px solid black;
+  background: orange;
+  transform: translateY(0);
+
+}
+50%{
+  border: 1px solid black;
+  background: wheat;
+  transform: translateY(-25px);
+  
+}
+100%{
+  border: 1px solid black;
+  background:green;
+  transform: translateY(0);
+  
+}
+}
+.test{
+  background-color: #213d77;
+  color: #e1e1e1;
+  height: 85px;
+  width: 200px;
+  border-radius: 8px;
+  margin-left: 10px;
+
+}
+.hiddento{
+ 
+   height: auto;
+   margin-top: 5px;
+   background-color: #fff;
+   z-index: 3;
+   position: absolute;
+   width: 210px;
+   border: 1px solid white;
+   border-radius: 3px;
+   margin-left: 240px;
+}
+.hiddenfrom{
+
+   margin-top: 5px;
+   z-index: 3;
+   height: auto;
+   background-color: #fff;
+   position: absolute;
+   width: 210px;
+   border: 1px solid white;
+   border-radius: 3px;
+   margin-left: 0px;
+}
+.hiddento > div{
+  cursor: pointer;
+  border-bottom: 1px solid lightblue;
+}
+.hiddenfrom >div{
+  cursor: pointer;
+  border-bottom: 1px solid lightblue;
+}
+.hiddenfrom >div:hover{
+  color: #fff;
+  background-color: blue;
+}
+.hiddento >div:hover{
+  color: #fff;
+  background-color: blue;
+}

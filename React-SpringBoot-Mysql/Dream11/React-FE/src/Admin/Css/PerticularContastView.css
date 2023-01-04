@@ -1,0 +1,10 @@
+.btnplayer{
+    width: 80px;
+   background-color: blue;    
+}
+.btngrpplayers{
+    background-color: yellow;
+    width: 100%;
+    height: 300px;
+    overflow-wrap: anywhere;
+}

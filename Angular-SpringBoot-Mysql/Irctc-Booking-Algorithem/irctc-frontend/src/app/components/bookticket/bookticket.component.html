@@ -1,0 +1,42 @@
+
+<div class="container-fluid d-flex row status">
+<div class="progress-val col-4 text-center">
+    <div><h6 class="sp">1</h6></div>
+    <p class="top-nav">Passenger Details</p>
+</div>
+<div class="progress-val col-4 text-center">
+    <div class="text-center">   <h6 class="sp">2</h6>
+   </div> <p  class="top-nav">Passenger Review</p>
+ 
+</div>
+<div class="progress-val col-4 text-center">
+    <div>   <h6 class="sp">3</h6>
+           
+    </div>
+    <p  class="top-nav">Payment</p>
+ 
+</div>
+<div class="line"></div>
+<div class="line1"></div>
+
+</div>
+
+
+<div class="container-fluid bg-col d-flex">
+    <!-- <div class="left-container">
+
+   <div *ngIf="pages=='first'"> <app-passenger [data]="trip" (newItemEvent)="onChangePage($event)"></app-passenger></div>
+   <div *ngIf="pages=='psg'"><app-passengerreview ></app-passengerreview></div>
+   <div *ngIf="pages=='tik'"><app-ticketview></app-ticketview></div>
+   <div></div>
+  
+     </div> -->
+     <div class="left-container">
+        
+        <router-outlet ></router-outlet>
+        <div></div>
+       
+          </div>
+     <div class="container right-container">hell </div>
+</div>
+

@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="container-fluid">
+
+
+    <div>
+      <h2><strong>{{moviedetails.movieName}}(({{moviedetails.movieCast}}))</strong></h2>
+      <hr>
+      <p>{{moviedetails.description}}</p>
+      <hr>
+
+    </div>
+    <div class="container">
+      <h6>SHOW TIME</h6>
+      <h4>{{moviedetails.time}} || {{moviedetails.date}}</h4>
+
+    </div>
+    <hr>
+
+
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <form>
+          <div class="form-group row">
+            <label for="staticEmail" class="col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" [(ngModel)]="finalJson.emailId" name="emailId" class="form-control" id="staticEmail" value="">
+            </div>
+          </div>
+          <div class="form-group row mt-5">
+            <label for="inputPassword" >MobileNumber</label>
+            <div class="col-sm-10 ">
+              <input type="number" [(ngModel)]="finalJson.mobile" name="mobile" (keyup)="mobileNoVerify()" class="form-control" id="inputPassword" placeholder="Mobile no">
+            </div>
+            <p class=".text-danger">{{errormsg}}</p>
+          </div>
+        </form>
+        <button class="btn btn-primary" (click)=" goback()">Back</button>
+      </div>
+      <div class="col-6 ">
+        <div class="container mt-5">
+
+          <div class="row">
+
+            <div class="col-3"> No.O.Members</div>
+                <div class="col-3"></div>
+                <div class="col-3"> {{seats.length}}</div>
+
+             </div>
+             <div class="row mt-3">
+
+            <div class="col-3">  Prize : </div>
+            <div class="col-3"></div>
+            <div class="col-3">  {{details.movie.prize}}</div>
+
+         </div>
+         <div class="row mt-3">
+
+          <div class="col-3">     Total Prize  : </div>
+          <div class="col-3"></div>
+          <div class="col-3">  {{prize}}</div>
+
+       </div>
+       <div class="row mt-4">
+        <button class="btn btn-primary" (click)="onConfirm()">Confirm</button>
+       </div>
+       <div class="row mt-4">
+        <button class="btn btn-info">Cancel</button>
+       </div>
+             </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+

@@ -1,0 +1,106 @@
+<div class="container bg-colorpnr">
+
+    
+  <div>
+      <div class="divheader">
+            <h3>Passenger Current Status Enquiry</h3>
+      </div> 
+      <div>
+        {{myDate}}
+      </div> 
+      <pre></pre>
+      <div class="container">
+        <h6>Enter the PNR for your booking below to get the current status. You will find it on the top left corner of the ticket.</h6>
+      </div>
+      <pre></pre>
+      <pre> </pre>
+      <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+        <div class="col-6 d-flex"><h4>Enter Pnr :</h4> <input [(ngModel)]="pnr" type="text" > <button (click)="onSearch()" class="btn btn-primary">Search</button></div>
+            <div class="col-2 text-danger" *ngIf="error">Pnr NotFound</div>
+
+
+        </div>
+
+      </div>
+     
+     <div class="sercbox"  *ngIf="serching" >
+
+        <h2 class="searchcontent" *ngIf="serching" data-text="PNR Searching">PNR Searching....</h2>
+
+     </div>
+     
+
+      <div *ngIf="dataStastus" class="container fin">
+        <table class="table">
+            <thead class="thead">
+              <tr>
+               
+                <th scope="col">PNR Number</th>
+                <th scope="col">Date Of Booking</th>
+                <th scope="col">Total Fare</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                
+                <td>{{pnrdata.pnr}}</td>
+                <td>{{pnrdata.dateOfbooking}}</td>
+                <td>{{"NO"}}</td>
+              </tr>
+                
+            </tbody>
+          </table>
+        
+            <table class="table">
+                <thead class="thead">
+                  <tr>
+                  
+                    <th scope="col">Train No</th>
+                    <th scope="col">Date Of Journey</th>
+                    <th scope="col">From Station</th>
+                    <th scope="col">To Station</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                   
+                    <td>{{pnrdata.trainNo}}</td>
+                    <td>{{pnrdata.dateOfJourney}}</td>
+                    <td>{{pnrdata.fromSta}}</td>
+                    <td>{{pnrdata.toSta}}</td>
+                  </tr>
+                    
+                </tbody>
+              </table>
+              <table class="table table-bordered finaltab">
+                <thead class="thead">
+                  <tr>
+                    <th>#</th>
+                    <th>Passengers</th>
+                    <th>SeatNo/Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = "let pass of pnrdata.passengers">
+                    <td>1</td>
+                    <td>{{pass.passe}}</td>
+                    <!-- <td class="text-right">1600.00</td> -->
+                    <td>{{pass.seatNo}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        
+      </div>
+
+    
+     </div>
+
+  <div>
+
+
+  </div>
+
+</div>

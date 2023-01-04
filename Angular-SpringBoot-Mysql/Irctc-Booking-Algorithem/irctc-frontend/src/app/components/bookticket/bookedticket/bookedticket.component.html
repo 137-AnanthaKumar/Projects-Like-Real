@@ -1,0 +1,68 @@
+<div class="container-fluid">
+<div class="container-fluid">
+    
+    <p>Thank you ! You Successfully Bokked ticket</p>
+</div>
+<div class="container-fluid top-1">
+    <div class="row trainHead">
+        <div class="col-4"><h5>{{finalTicket.details.trainName}}({{finalTicket.details.trainNo}})</h5></div>
+        <div class="col-3"></div>
+        <div class="col-5 text-right"><h4>PNR: &nbsp;{{finalTicket.pnr}}</h4></div>
+    </div>
+    <div class="row row-1">
+        <div class="col-4 text-left"><h5>{{finalTicket.details.fromSta}}&nbsp;<span>{{finalTicket.details.startTime}}</span></h5><span>--</span>{{finalTicket.details.dateOfJourney}}</div>
+        <div class="col-1 text-center">1</div>
+        <div class="col-4 text-center"><h5>{{finalTicket.details.toSta}}&nbsp;<span>{{finalTicket.details.endTime}}</span></h5><span>--</span>{{finalTicket.details.endOfJourney}}</div>
+        <div class="col-2 text-center"></div>
+    </div>
+    <div class="row text-center tob-bott">
+        <p> {{finalTicket.pass.length}} Adult | {{finalTicket.details.classType}} ({{finalTicket.details.clasaa}}) |Boarding At {{finalTicket.details.fromSta}}}|Boarding Date {{finalTicket.details.dateOfJourney}}</p>
+    </div>
+
+</div>
+<div class="accordion" id="accordionExample">
+<div class="accordion-item mt-4">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+       Passenger Detail
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="container-fluid" *ngFor="let pass of finalTicket.pass;let i=index">
+            <div class="row  headdd">
+                <div class="col-1">{{i+1}}</div>
+                <div class="col-2"><h3>{{pass.name}}</h3></div>
+                <div class="col-2 mt-1">{{pass.age}} &nbsp;| &nbsp;{{pass.genter}}</div>
+                <div class="col"></div>
+            </div>
+            <div >
+             <div class="row">
+                <div class="col"><table class="table table-borderless">
+                    <thead>
+                      <tr class="text-warning">
+                       
+                        <td scope="col-3 ">Ticket Status</td>
+                        <td scope="col">Coach No</td>
+                        <td scope="col">Seat No</td>
+                        <td scope="col">Class Type</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                     
+                        <td>{{pass.status}}</td>
+                        <td>{{pass.coachNo}}</td>
+                        <td>{{pass.seatNo}}</td>
+                        <td>{{pass.coachType}}</td>
+                      </tr>
+                
+                    </tbody>
+                  </table></div></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,64 @@
+.status{
+    position: relative;
+    height: 100px;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+}
+.progress-val{
+    z-index: 2;
+    margin-top: 40px;
+}
+.progress-val > div{
+   position: relative;
+    background-color: orange;
+    color: aliceblue;
+    width: 37px;
+    height: 37px;
+    margin-left: 100px;
+    border-radius: 50%;
+    align-items: center;
+    text-align: center;
+}
+.sp{
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 13px;
+    
+    
+}
+.line{
+    position: absolute;
+    width: 400px;
+    background-color:green;
+    height: 1px;
+    margin-top: 57px;
+    margin-left: 129px;
+}
+.line1{
+    position: absolute;
+    width: 400px;
+    background-color:green;
+    height: 1px;
+    margin-top: 57px;
+    margin-left: 550px;
+}
+.bg-col{
+    background-color: azure;
+}
+.left-container{
+    width: 920px;
+ 
+    min-height: 500px;
+}
+.right-container{
+    margin-left: 20px;
+    width: 300px;
+  
+  max-height: 350px;
+}
+.top-nav{
+   
+    margin-left:-140px ;
+}

@@ -1,0 +1,181 @@
+<div class="total_center">
+  <div *ngIf="settingpage=='all'"><select [(ngModel)]="chosenMod" (ngModelChange)="onChenge()">
+      <option value="1">Running Today movies</option>
+      <option value="2">Running Upcoming movie</option>
+      <option value="3"> booking-Opened</option>
+      <option value="4"> Bookings-Stoped</option>
+
+    </select></div>
+
+
+  <div class="grid-container"*ngIf="movies.length==0"><h3>No-Movies Found</h3></div>
+
+  <div  [ngSwitch]="settingpage" >
+    <div *ngSwitchCase="'all'" >
+
+
+<div class="grid-container">
+
+      <div *ngFor="let movie of movies">
+
+      <div (click)="getView(movie.movieId)"  class="card grid-item" style="width: 18rem;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{movie.movieName}}</h5>
+          <p class="card-text">Movie Cast : {{movie.movieCast}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Price : {{movie.prize}}</li>
+          <li class="list-group-item">Avaibale Seats : {{movie.availableSeats}}</li>
+          <li class="list-group-item">Date: {{movie.date}}</li>
+          <li class="list-group-item">Show Timings : {{movie.time}}</li>
+          <li class="list-group-item">Movie Status: {{movie.movieStatus}}</li>
+          <li class="list-group-item">Screen Type: {{movie.screen.type}}</li>
+          <li class="list-group-item">Total seats: {{movie.screen.totalSeats}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Screen: {{movie.screen.screenId}}</a>
+          <a href="#" class="card-link">Screen Type: {{movie.screen.type}}</a>
+        </div>
+      </div></div></div>
+
+
+
+
+    </div>
+    <div *ngSwitchCase="'perticular'" >
+      <div class="fon-size" >
+        <div class="button-align">
+        <button (click)="changepage()">Back</button>
+        <button  (click)="PerticularSetting(view[0])">more-setting</button>
+        </div>
+
+        <div class="card text-center">
+          <div class="card-header">
+            {{view[0].movieName}}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{view[0].movieName}}</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex">
+                <div class="col-6 label_class">BOOKING OPEN</div>
+
+                <div class="col d-flex  hgjhjh"><div class="main mt-1">
+                  <div (click)="changeStatus(view[0].movieId)" [ngClass]="view[0].bookingOpened?'curs':'curs1'">
+                  </div>
+                </div>
+                <div class="col-2 label_class-dark" *ngIf="view[0].bookingOpened">Stop Opening</div>
+                <div class="col-2 label_class-dark" *ngIf="!view[0].bookingOpened">Open Booking</div>
+              </div>
+              </li>
+
+            </ul>
+
+            <a  class="btn btn-primary">
+              MOVIE ID-{{view[0].movieId}}
+          </a>
+
+          </div>
+          <div class="card-footer text-muted">
+            {{view[0].date}} : {{view[0].time}}
+
+          </div>
+        </div>
+
+
+    </div>
+    </div>
+    <div *ngSwitchCase="'perticular-setting'" >
+
+
+     <!-- //---  -->
+     <div  [ngSwitch]="insidecontrol" >
+
+     <div  *ngSwitchCase="'ticketspage'"  style="overflow-x: auto;">
+      <nav   aria-label="Page navigation example" >
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" (click)="coClickPrevious()" >Previous</a></li>
+        <div class="page-item" *ngFor="let a of numberOfPage">
+          <li class="page-item" (click)="interMediateClice(a)" ><a class="page-link" [ngClass]="a==currentPage? 'currentpage' : '' " >{{a}}</a></li>
+        </div>
+          <li class="page-item"><a class="page-link" (click)="onClickNext()">Next</a></li>
+        </ul>
+      </nav>
+      <button (click)="backToControl()">Close</button>
+      <table>
+        <tr>
+          <th>Ticket Id</th>
+          <th>DateOfBooking</th>
+          <th>Time</th>
+          <th>NoOfPersons</th>
+          <th>EmailId</th>
+          <th>MobileNo</th>
+          <th>MobileNo</th>
+       </tr>
+
+     <tr *ngFor="let details of tikets">
+          <td>{{details.ticketId}}</td>
+          <td>{{details.bookingDate}}</td>
+          <td>{{details.bookingTime}}</td>
+          <td>{{details.noOdMembers}}</td>
+          <td>{{details.mailId}}</td>
+          <td>{{details.mobileNo}}</td>
+          <th><div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+
+                <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                 View Seats
+                </button>
+
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="" *ngFor="let seat of details.seatsForThisBooking">
+                  <p>{{seat.seatNo}} </p>
+                </div>
+
+               </div>
+            </div>
+
+          </div></th>
+
+    </tr>
+
+      </table>
+    </div>
+
+
+      <div class="d-flex"  *ngSwitchCase="'controlspage'">
+        <div class="bg-white left-seats">
+        <tr *ngFor="let b of line">
+        <td *ngFor="let a of numbers">
+         <div (click)="selectSeat(b+a)">
+
+           <img  *ngIf="avaiable(b+a)==='filled' " class="sofaicon" src="../../../assets/images11.png" />
+           <img  *ngIf="avaiable(b+a)==='avail' " class="sofaicon" src="../../../assets/images.png" />
+           <img  *ngIf="avaiable(b+a)==='locked'" class="sofaicon" src="../../../assets/locked1.png" />
+           <img  *ngIf="avaiable(b+a)==='none'" class="sofaicon" src="../../../assets/sofa_icon.png" />
+         </div>
+        </td> </tr></div>
+        <div class="btn-groupt">
+          <div class="gapping d-flex">
+            <button (click)="PericularSettingControl('one-step')">back</button>
+            <button (click)="PericularSettingControl('two-step')">Main Menu</button>
+            </div>
+          <button class="lock-button" (click)="onClickButton('lock')">Lock</button>
+          <button class="lock-button" (click)="onClickButton('unlock')">UnLock</button>
+          <button class="lock-button">Unselect All</button>
+          <button class="lock-button" (click)="onClickButton('path')">Make path</button>
+          <button class="lock-button" (click)="onClickView('tickets')">Booked</button>
+        </div>
+
+      </div></div>
+         <!-- //---  -->
+
+
+
+
+
+    </div>
+  </div>
+
+

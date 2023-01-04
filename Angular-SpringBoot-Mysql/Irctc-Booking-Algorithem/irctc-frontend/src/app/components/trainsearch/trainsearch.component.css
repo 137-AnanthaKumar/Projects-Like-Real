@@ -1,0 +1,81 @@
+.main{
+    position: relative;
+    height: 100%;
+    background-image: url("https://www.teahub.io/photos/full/17-179187_indian-train-hd-wallpaper-download.jpg");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+}
+.bg-dis{
+   background-color: blue;
+   color: white;
+}
+.bg-spec{
+    opacity: 0.1;
+}
+
+
+
+.box-top{
+    position: absolute;
+    margin-left: 110px;
+    margin-top: 30px;
+    width: 500px;
+    height: 30px;
+}
+.search-box{
+    position: absolute;
+    background-color: #fff;
+    margin-left: 110px;
+   margin-top: 60px;
+   height: 420px;
+    width: 500px;
+}
+.form-floating{
+    width: 200px;
+    height: 30px;
+}
+.hiddento > div{
+    cursor: pointer;
+    border-bottom: 1px solid lightblue;
+}
+.hiddenfrom >div{
+    cursor: pointer;
+    border-bottom: 1px solid lightblue;
+}
+.hiddenfrom >div:hover{
+    color: #fff;
+    background-color: blue;
+}
+.hiddento >div:hover{
+    color: #fff;
+    background-color: blue;
+}
+.hiddento{
+   border-right:  1px solid lightblue;
+   border-left:  1px solid lightblue;
+    height: auto;
+    margin-top: 5px;
+    background-color: #fff;
+    z-index: 3;
+    position: absolute;
+    width: 210px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-left: 240px;
+}
+.hiddenfrom{
+    border-right: 1px solid lightblue;
+    border-left: 1px solid lightblue;
+    margin-top: 5px;
+    z-index: 3;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    width: 210px;
+    border: 1px solid white;
+    border-radius: 3px;
+    margin-left: 0px;
+}
+
+

@@ -1,0 +1,57 @@
+<div class="container_booking">
+  <div class="container"  id="contentToConvert">
+   <div id="maincore">
+    <div class="row" id="rows"> Your Ticket Details </div>
+
+    <div><p ><span (click)="captureScreen()" style="color:blue ;">click here</span> download your ticket</p></div>
+
+    <div class="row">
+      <div class="col-6">Ticket Id</div>
+      <div class="col-6">{{details.ticketId}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-6">No.Of Persons</div>
+      <div class="col-6">{{details.noOdMembers}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-6">Movie Name</div>
+      <div class="col-6">{{details.movieDetails.movieName}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-6">Date and Time</div>
+      <div class="col-6">{{details.movieDetails.date}}--{{details.movieDetails.time}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-6">Screen</div>
+      <div class="col-6">{{details.movieDetails.screen.screenId}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-6">Type of screen</div>
+      <div class="col-6">{{details.movieDetails.screen.type}}</div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-6">Seat No</div>
+      <div class="col-6 d-flex">
+        <div *ngFor="let a of details.seatsForThisBooking; let  i=index">
+          <div class="d-flex">   <h3>{{a.seatNo}}</h3><h3 *ngIf="!((a.length-1)==i)">,</h3></div>
+
+          <!-- <span *ngIf="">
+            ,</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<hr>
+  </div>
+
+  <div> </div>
+
+</div>
