@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "a328ac14-11d1-4854-9652-a1c13bf3a5a1",
+		"name": "BusBooking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25065236"
+	},
+	"item": [
+		{
+			"name": "AddBus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJha2lsYSIsImlhdCI6MTY1NjQwNzk1NCwiZXhwIjoxNjU2NDk0MzU0fQ.86iaWSbWHbqn5ISaJMzo9K7jtaxxs9Y7CWwyguyqCyLguNpnR4Vj5KlAcbYrQiavigXYxPp3wJc_GPfbxDqekA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"busNo\":\"BUS22\",\r\n    \"noOfSeat\":100,\r\n    \"prizePerPerson\":254\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bus/addnewbus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bus",
+						"addnewbus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookTicket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJha2lsYSIsImlhdCI6MTY1OTE4NDI4MSwiZXhwIjoxNjU5MjcwNjgxfQ.SQabOrorrsK0IKL_DrDaxNFgTZQAmw-qER6h0wX0GT8mx779ZA_WcZoydga8PY3WX1nXiTEhAvKy_0WvxKSjMw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"busNo\":\"BUS22\",\r\n    \"passenger\":[\r\n        {\r\n            \"name\":\" khkjg\",\r\n            \"age\":28\r\n        }    ,\r\n         {\r\n            \"name\":\" hdhgd\",\r\n            \"age\":30\r\n        }   \r\n       \r\n          \r\n         \r\n        \r\n        \r\n    ]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/apii/bookBus/newTicket",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"apii",
+						"bookBus",
+						"newTicket"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ViewTicketByPNR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passenger/viewticket/500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passenger",
+						"viewticket",
+						"500"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OverallCancelTicket",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrdW1hcm1lY2giLCJpYXQiOjE2NTA1MjQ0NDgsImV4cCI6MTY1MDYxMDg0OH0.QpfRGMj9uNujQqMa7BrT5aYJJR-KmlNq4pozpQvaSfT7xSEeTSmznIajDakM0hHXxaMUHGS7wad0g8k7poId9A",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/bus/getAllBus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bus",
+						"getAllBus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelTicketPertiCularPassenger",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passenger/cancelTicket/502/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passenger",
+						"cancelTicket",
+						"502",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJha2lsYSIsImlhdCI6MTY1OTE4NDI4MSwiZXhwIjoxNjU5MjcwNjgxfQ.SQabOrorrsK0IKL_DrDaxNFgTZQAmw-qER6h0wX0GT8mx779ZA_WcZoydga8PY3WX1nXiTEhAvKy_0WvxKSjMw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/bus/getBus/BUS22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bus",
+						"getBus",
+						"BUS22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllPassengerForBus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJha2lsYSIsImlhdCI6MTY1OTE4NDI4MSwiZXhwIjoxNjU5MjcwNjgxfQ.SQabOrorrsK0IKL_DrDaxNFgTZQAmw-qER6h0wX0GT8mx779ZA_WcZoydga8PY3WX1nXiTEhAvKy_0WvxKSjMw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/bus/getAllPassenger/BUS22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bus",
+						"getAllPassenger",
+						"BUS22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllBusList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjaWIiLCJpYXQiOjE2NTY0MDA2NTMsImV4cCI6MTY1NjQ4NzA1M30.8BeBviVY7zkFI9guhVnazYw10AxmFvRY_TyJ8mE9C5w6xKRD1rz5K1aU1_GBxM_0qlFhi989yAxOC7YqMsVeuA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/bus/getAllBus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"getAllBus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBusWithTicket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/bus/getAllTicket/BUS23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bus",
+						"getAllTicket",
+						"BUS23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/passenger/getuser/2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJha2lsYSIsImlhdCI6MTY1OTE4NDI4MSwiZXhwIjoxNjU5MjcwNjgxfQ.SQabOrorrsK0IKL_DrDaxNFgTZQAmw-qER6h0wX0GT8mx779ZA_WcZoydga8PY3WX1nXiTEhAvKy_0WvxKSjMw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/passenger/getuser/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passenger",
+						"getuser",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "639f44d7-62d4-45d2-b3f2-64fc75f9043d",
+		"name": "Dream11",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25065236"
+	},
+	"item": [
+		{
+			"name": "AddNewContest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"MIvsCsk\",\r\n    \"teamsId\":[1,2],\r\n    \"contestAmount\":100,\r\n    \"totalteams\":2,\r\n    \"maxTeamsPerUser\":1\r\n   \r\n   \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contest/addNewContests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contest",
+						"addNewContests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTeamsAndPlayers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"teamName\":\"MI\",\r\n    \"players\":[\r\n     {\r\n         \"name\":\"Pollard\",\r\n         \"role\":\"ALL-ROW\"\r\n     },\r\n       {\r\n         \"name\":\"Ishan\",\r\n         \"role\":\"WK\"\r\n     },\r\n       {\r\n         \"name\":\"Boom\",\r\n         \"role\":\"BOW\"\r\n     },\r\n       {\r\n         \"name\":\"Sams\",\r\n         \"role\":\"ALL-ROW\"\r\n     },\r\n      {\r\n         \"name\":\"miruitith\",\r\n         \"role\":\"BOW\"\r\n     }\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/teams/addNewTeam",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"teams",
+						"addNewTeam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateDream11Account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountName\":\"ankjjiiDeam11\",\r\n    \"user\":{\r\n        \"name\":\"akilaanand\",\r\n        \"mail\":\"aklakuajjry@gmail.com\"\r\n           }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dream11Account/newAccount",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dream11Account",
+						"newAccount"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllActiveContest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBa2lsYUFuYW50aFRweSIsImlhdCI6MTY1MzI3OTAzMiwiZXhwIjoxNjUzMzY1NDMyfQ.NoiUO1V1VeWIu_-PixdcLjSWiVz_CmIl0CmkBJLbtWCxH6M2AXBrB0tLmmKClniYih15WnQolZpbW7FPLzbOmg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/contest/getAllActiveContest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contest",
+						"getAllActiveContest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JoinContest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBa2lsYUFuYW50aFRweSIsImlhdCI6MTY1MzI3OTAzMiwiZXhwIjoxNjUzMzY1NDMyfQ.NoiUO1V1VeWIu_-PixdcLjSWiVz_CmIl0CmkBJLbtWCxH6M2AXBrB0tLmmKClniYih15WnQolZpbW7FPLzbOmg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"contestId\": \"1\",\r\n   \"accountID\":6,\r\n   \"captainId\":3,\r\n   \"viceCaptainId\":4,\r\n   \"playerIdForThisContest\":[1,2,3,4,8]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/contest/joinContest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contest",
+						"joinContest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POINTSUPDATES",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"playerId\":2,\r\n    \"contestId\":1,\r\n    \"runs\":10,\r\n    \"catches\":0,\r\n    \"wicket\":0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/liveUpdates/updatesRunAndPoints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"liveUpdates",
+						"updatesRunAndPoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "REVERSE_POINTS_UPDATES",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n   {  \"playerId\":10,\r\n    \"contestId\":1,\r\n    \r\n    \"runs\":0,\r\n    \"catches\":0,\r\n    \"wicket\":1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/liveUpdates/reverseUpdatesRunAndPoints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"liveUpdates",
+						"reverseUpdatesRunAndPoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAll",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBS0lMQSIsImlhdCI6MTY1NDc1MDczNywiZXhwIjoxNjU0ODM3MTM3fQ.ioV_li0EUQg8OTRezCVdUiiG_FlKZ8i8B1etIU8ieLkq0eCLF9Ba6kKFqfWXmvsUK5lBUV3xm7BZEsYnUzYxzA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/adminControll/updatePOintsInAllTeams/DREAM09cJkhI/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adminControll",
+						"updatePOintsInAllTeams",
+						"DREAM09cJkhI",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_POINTS_FORMYTEAM",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBTkFOVEgiLCJpYXQiOjE2NTQwNTkxOTMsImV4cCI6MTY1NDE0NTU5M30.uJFNNaL1lrCQ44QROBRLgPc_jhIlLl7U3TpLz-1U9YLtKzskm0Ih1RRRPphu50t14L7tgi9yFHOOT2O7dZFL9Q",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/liveUpdates/getMyteamWithPoints/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"liveUpdates",
+						"getMyteamWithPoints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPOINTbyORter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBa2lsYUFuYW50aFRweSIsImlhdCI6MTY1MzI3OTAzMiwiZXhwIjoxNjUzMzY1NDMyfQ.NoiUO1V1VeWIu_-PixdcLjSWiVz_CmIl0CmkBJLbtWCxH6M2AXBrB0tLmmKClniYih15WnQolZpbW7FPLzbOmg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/liveUpdates/getTeamsOrderByPoints/DREAM20jAWxZ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"liveUpdates",
+						"getTeamsOrderByPoints",
+						"DREAM20jAWxZ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SetRanks",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBS0lMQSIsImlhdCI6MTY1NDY3NTA4NCwiZXhwIjoxNjU0NzYxNDg0fQ.KXUSVDiS_VuKByGvPwcikUqq0Trx8gVwQUVS2rXD-jcE7wdsEggicSW8L3lnl1ee1D_QiIHHpVR3DMKzWjHiLg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/adminControll/setRanks/DREAM08yVVRL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adminControll",
+						"setRanks",
+						"DREAM08yVVRL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SingIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"username\":\"MYLOVE\",\r\n    \"password\":\"MYLOVE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetMyJoinedContest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBQkMiLCJpYXQiOjE2NTM0NTUyNjUsImV4cCI6MTY1MzU0MTY2NX0.oRtfVJ61cM1xwia3R4jHL2K7OF1bhoIl1ixkJilF3aSeOhZUoT7EENbiC9EFhdHcrvLcd81s1BO4WGM-Y1EtAA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/contest/getMyContestInitiate/ABCACT",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contest",
+						"getMyContestInitiate",
+						"ABCACT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENableDisable",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBTkFOVEhBS0lMQSIsImlhdCI6MTY1NDA1NzU2MSwiZXhwIjoxNjU0MTQzOTYxfQ.gXPEF5U7WXCanVssYUfWvx9wZxcwxpW2JWF0b0Y6lhzWI2CqAOAXIYr0PqF1xFQKahd7y76hGuLDtGcxHHuyMQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/contest/enableDisableContest/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"contest",
+						"enableDisableContest",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTeamById",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBTkFOVEgiLCJpYXQiOjE2NTQwNTkxOTMsImV4cCI6MTY1NDE0NTU5M30.uJFNNaL1lrCQ44QROBRLgPc_jhIlLl7U3TpLz-1U9YLtKzskm0Ih1RRRPphu50t14L7tgi9yFHOOT2O7dZFL9Q",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/liveUpdates/getteam/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"liveUpdates",
+						"getteam",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PrizeListCalculation",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBS0lMQSIsImlhdCI6MTY1NDY3NTA4NCwiZXhwIjoxNjU0NzYxNDg0fQ.KXUSVDiS_VuKByGvPwcikUqq0Trx8gVwQUVS2rXD-jcE7wdsEggicSW8L3lnl1ee1D_QiIHHpVR3DMKzWjHiLg",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/adminControll/prizeListCalculation/DREAM09cJkhI",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adminControll",
+						"prizeListCalculation",
+						"DREAM09cJkhI"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sETrANK",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDT05UUk9MTEVSIiwiaWF0IjoxNjUzNjMwOTEyLCJleHAiOjE2NTM3MTczMTJ9.HRoltB8qEenJD1t4-ynrLzqL8kP5RWqqKrVAIHPxTtREewl-Eb1u_-jCVXWQD5ivln4rs3z2g5WFSAjCQnbSIQ",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/adminControll/setRanks/DREAM26dPbYc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adminControll",
+						"setRanks",
+						"DREAM26dPbYc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTrain(serch By train No)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU3NjkwNTQ2LCJleHAiOjE2NTc3NzY5NDZ9.MBMBzDgEcWKyY4QpivFaJ52SbStOOtX737jMYTGsTFwloUHq4Z3Vb9OYOGGGXgneu0BMfMbtNXY3_K2bBNrdEw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/irctc/train/gettrain/652465",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"train",
+						"gettrain",
+						"652465"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New RailWayStation",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU5NjE2NjQ2LCJleHAiOjE2NTk3MDMwNDZ9.qxeKDwe9MjpErYtpKGK0PyRbVEiuOQT8fOgaKAn1fS49YGIrHJjw6y5dgMObMhGqcQNMi0pi4iuU2gv7KsZmKw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"stationCode\" :\"KAN\",\r\n   \"stationName\":\"KANNIYA KUMARI\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/train/deletetrain/652465",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"train",
+						"deletetrain",
+						"652465"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

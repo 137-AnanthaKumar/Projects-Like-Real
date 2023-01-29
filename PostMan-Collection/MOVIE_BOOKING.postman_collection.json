@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "3deecaf1-91d7-4994-b92e-c9dea8a4b07c",
+		"name": "MOVIE_BOOKING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25065236"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Owner\",\r\n    \"email\":\"ananthdkumartpy@gmail.com\",\r\n    \"password\":\"ananthakila\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/petproject/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADMINADD",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBa2lsYSIsImlhdCI6MTY3MjE0NDQzMywiZXhwIjoxNjcyMjMwODMzfQ.bLLom38aIGgeAnYGYijo6dtsdoW6aYKM88gHIQtsSbrrjXJd0leVsDQLdN9wcltEuwN7qmXli94Q5NFuJMjnug",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\" : \"Admin\",\r\n    \"doorNo\" : \"456/AC\",\r\n    \"area\":\"Chennai\",\r\n    \"salary\": 18000,\r\n    \"user\":{\r\n         \"username\":\"Admin\",\r\n         \"email\":\"admin@gmail.com\",\r\n         \"mobileNo\":7466575345\r\n        \r\n    }\r\n  \r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/petproject/manager/control/addemployee/ROLE_ADMIN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"manager",
+						"control",
+						"addemployee",
+						"ROLE_ADMIN"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Owner\",\r\n \"password\":\"ananthakila\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/petproject/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEACTIVATE ADIMN",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhha3VtYXIxIiwiaWF0IjoxNjcxOTAzMzAxLCJleHAiOjE2NzE5ODk3MDF9.uUhlRcGRfDU5F401iz9LfpsNm8Kf99CH5QuVUGD99261TFQnbmgD94cNzv_k6zic_P9m4ZMjEu1JIU7ZNNNLMg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/petproject/manager/control/blockAdmin/1016",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"manager",
+						"control",
+						"blockAdmin",
+						"1016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADDROLE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"ROLE_ADMIN_BLOCKED\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/petproject/auth/addrole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"auth",
+						"addrole"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/petproject/manager/control/ActivateAdmin/1016",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhha3VtYXIxIiwiaWF0IjoxNjcxOTAzMzAxLCJleHAiOjE2NzE5ODk3MDF9.uUhlRcGRfDU5F401iz9LfpsNm8Kf99CH5QuVUGD99261TFQnbmgD94cNzv_k6zic_P9m4ZMjEu1JIU7ZNNNLMg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/petproject/manager/control/ActivateAdmin/1016",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"manager",
+						"control",
+						"ActivateAdmin",
+						"1016"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/petproject/manager/control/deleteEmployee/1015",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBa2lsYSIsImlhdCI6MTY3MjE0NDQzMywiZXhwIjoxNjcyMjMwODMzfQ.bLLom38aIGgeAnYGYijo6dtsdoW6aYKM88gHIQtsSbrrjXJd0leVsDQLdN9wcltEuwN7qmXli94Q5NFuJMjnug",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/petproject/manager/control/deleteEmployee/1015",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"manager",
+						"control",
+						"deleteEmployee",
+						"1015"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/petproject/auth/screen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"screenId\":2,\r\n    \"totalSeats\": 336,\r\n    \"type\": \"4K\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/petproject/auth/screen",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"auth",
+						"screen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/petproject/manager/control/addemployee/ROLE_OWNER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mobileNo\": \"9600929071\",\r\n    \"fullName\": \"Thanga\",\r\n    \"doorNo\": \"4/56c\",\r\n    \"area\": \"Tenkasi\",\r\n    \"salary\": 24000,\r\n    \"author\": \"********\",\r\n    \"user\": {\r\n         \"username\":\"Thanga\",\r\n         \"email\":\"manager@gmail.com\",\r\n         \"mobileNo\": \"9600929071\"\r\n         }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/petproject/manager/control/addemployee/ROLE_OWNER",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"petproject",
+						"manager",
+						"control",
+						"addemployee",
+						"ROLE_OWNER"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

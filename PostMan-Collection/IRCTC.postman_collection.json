@@ -1,0 +1,609 @@
+{
+	"info": {
+		"_postman_id": "114849a5-56a4-489b-ad9f-962b5daf1be7",
+		"name": "IRCTC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25065236"
+	},
+	"item": [
+		{
+			"name": "IrctcRegistration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"ananthakumar1\",\r\n    \"email\":\"ananthadkumartpy@gmail.com\",\r\n    \"password\":\"ananthakila\",\r\n    \"authorno\":\"2348765\",\r\n    \"pincode\":627808,\r\n    \"nation\":\"india\",\r\n    \"state\":\"Tamil Nadu\",\r\n    \"area\":\"TippanamPatti\",\r\n    \"district\":\"TEnkasi\",\r\n    \"streetName\":\"poovarasan kovil street\",\r\n    \"age\":22,\r\n    \"fullName\":\"Thanaga anantha kumar\",\r\n    \"doorNo\":\"4/56c\",\r\n    \"mobileNo\":\"9600929071\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Irctc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"username\":\"ananthakumar\",\r\n      \"password\":\"ananthakila\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewTrain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhha3VtYXIiLCJpYXQiOjE2NjMzMjE2NDksImV4cCI6MTY2MzQwODA0OX0.pZqAR_sMZM7mrt1hA7gD8aNYzjPDi0ge9po9C3soeTg24smg-uC5yefeiGE4pK0gRMrY1kfxPpMarD-jIqR0wg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"trainNo\":12662,\r\n    \"trainName\":\"NELLAI EXPRESS\",\r\n    \"totalCoach\":12,\r\n    \"totalFirstclassAcCouch\":1,\r\n    \"totalFirstclassAcCouchSeats\":80,\r\n    \"totalSecondClassAc\":1,\r\n    \"totalSecondClassAcSeats\":80,\r\n    \"totalThirdClassAc\":2,\r\n    \"totalThirdClassAcSeats\":160,\r\n    \"totalSeeperClass\":8,\r\n    \"totalSleeperclassSeat\":480\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/train/addnewtrain",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"train",
+						"addnewtrain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditTrain(Path)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU3NjkwNTQ2LCJleHAiOjE2NTc3NzY5NDZ9.MBMBzDgEcWKyY4QpivFaJ52SbStOOtX737jMYTGsTFwloUHq4Z3Vb9OYOGGGXgneu0BMfMbtNXY3_K2bBNrdEw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \r\n  \r\n    \"trainName\":\"POTHIGAIEXPRESS\",\r\n    \"totalCoach\":12,\r\n    \"totalFirstclassAcCouch\":1,\r\n    \"totalFirstclassAcCouchSeats\":80,\r\n    \"totalSecondClassAc\":2,\r\n    \"totalSecondClassAcSeats\":160,\r\n    \"totalThirdClassAc\":3,\r\n    \"totalThirdClassAcSeats\":240,\r\n    \"totalSeeperClass\":6,\r\n    \"totalSleeperclassSeat\":480\r\n}\r\n  \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/train/edittrain/652465",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"train",
+						"edittrain",
+						"652465"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTrain",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU3NjkwNTQ2LCJleHAiOjE2NTc3NzY5NDZ9.MBMBzDgEcWKyY4QpivFaJ52SbStOOtX737jMYTGsTFwloUHq4Z3Vb9OYOGGGXgneu0BMfMbtNXY3_K2bBNrdEw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/irctc/train/deletetrain/652465",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"train",
+						"deletetrain",
+						"652465"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewRoute",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhha3VtYXIiLCJpYXQiOjE2NjMzMjE2NDksImV4cCI6MTY2MzQwODA0OX0.pZqAR_sMZM7mrt1hA7gD8aNYzjPDi0ge9po9C3soeTg24smg-uC5yefeiGE4pK0gRMrY1kfxPpMarD-jIqR0wg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"routeId\":\"H4HM\",\r\n    \"startingStation\":\"TSI\",\r\n    \"endStation\":\"MS\",\r\n    \"distance\":600,\r\n    \"noOfStations\":3,\r\n    \"routeStation\":[\"TSI\",\"MDU\",\"TBM\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/route/newRoute",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"route",
+						"newRoute"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTrain(path)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU5MjcxNjA0LCJleHAiOjE2NTkzNTgwMDR9.SKjlUwTiJvVisTdVHpv4Q0o_Fi9CUOuAfCYAe8ARq-WXelaBuZxWMKahUUEBLbfikztuJpu1cexiKiuQHIDfNA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/irctc/train/gettrain/652465",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"train",
+						"gettrain",
+						"652465"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TripScheduled",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU4MjIzMzIyLCJleHAiOjE2NTgzMDk3MjJ9.Bb2oWQgA1-smyODKltWd9yNkZN-2UzX7b6A8XnVMeI2g0Qz33sunW_pqb1H9fbT-3ymEkkApvp4gca2cSiBHLg",
+						"type": "default"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"trainNo\": 652465,\r\n    \"fromStation\":\"TSI\",\r\n    \"toStaion\":\"MS\",\r\n    \"startingTime\":\"15:30\",\r\n    \"endTiming\":\"05:30\",\r\n    \"sleeperPrize\":450,\r\n    \"totalSLseats\":100,\r\n    \"tatkalForSl\":20,\r\n    \"firstClassAcPrize\":1500,\r\n    \"totalFirstAcseats\":40,\r\n    \"tatkalForFirstAc\":7,\r\n    \"secondclassAcPrize\":1300,\r\n    \"totalSecondAcseats\":50,\r\n    \"tatkalForSecondAc\":12,\r\n    \"thirdClassAcPrize\":1000,\r\n    \"totalThirdAcseats\":60,\r\n    \"tatkalForThirdAc\":20,\r\n    \"dayForCreatingTrip\":100,\r\n    \"scheduleStartingDate\":\"2022-09-23\",\r\n    \"scheduleEndingDate\":\"2022-10-22\",\r\n    \"typeOfTrip\":\"DAILY\",\r\n    \"status\":\"ACTIVE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/tripSchedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"tripSchedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegistrationValidation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\":\"author\",\r\n    \"value\":\"9600929021\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/auth/validation",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"auth",
+						"validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createTrip",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhha3VtYXIiLCJpYXQiOjE2NjMzMjE2NDksImV4cCI6MTY2MzQwODA0OX0.pZqAR_sMZM7mrt1hA7gD8aNYzjPDi0ge9po9C3soeTg24smg-uC5yefeiGE4pK0gRMrY1kfxPpMarD-jIqR0wg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"trainNo\":12662,\r\n  \"dateOfJourney\" :\"2022-08-23\",  \r\n  \"endOfJourney\" :\"2022-08-24\",\r\n  \"startTime\":\"17:30:00\",\r\n  \"endTime\":\"05:30:00\",\r\n  \"fromStation\":\"TSI\",\r\n  \"toStaion\":\"MS\",\r\n  \"sleeperPrize\":450,\r\n  \"firstClassAcPrize\":1700,\r\n  \"secondclassAcPrize\":1400,\r\n  \"thirdClassAcPrize\":1100,\r\n  \"tatkalForSl\":97,\r\n  \"tatkal1Acseats\":25,\r\n  \"tatkalForSecondAc\":10,\r\n  \"tatkalForThirdAc\":30\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/trip/createTrip/H4HM",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"trip",
+						"createTrip",
+						"H4HM"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/data/newschedule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"totalCreation\":5,\r\n    \"timeDifferentForCreation\":\"00:12:10\",\r\n    \"nameOf\":\"anyfive\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/data/newschedule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"data",
+						"newschedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTrip maxLimit",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU5MjcxNjA0LCJleHAiOjE2NTkzNTgwMDR9.SKjlUwTiJvVisTdVHpv4Q0o_Fi9CUOuAfCYAe8ARq-WXelaBuZxWMKahUUEBLbfikztuJpu1cexiKiuQHIDfNA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/irctc/trip/gettrip/kA$2UNe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"trip",
+						"gettrip",
+						"kA$2UNe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BookTrain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjU5OTMyOTg1LCJleHAiOjE2NjAwMTkzODV9.kRSeLps1Rb0_qsUUSiBEYFzahH4fXC-iEBdIdtLMCII5brFpOOBXovOSL6zlLx7l1AJ3IjfxXCrlmK3YwzuiBA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"fromSta\":\"TSI\",\r\n    \"tripcode\":\"cX$7Ctk\",\r\n    \"clasaa\":\"SL\",\r\n    \"paymentMode\":\"ONLINE\",\r\n    \"toSta\":\"TBM\",\r\n    \"mobileNo\":919600929071,\r\n    \"noOfPassenger\":6,\r\n    \"passengers\":[\r\n        {\r\n            \"passengerName\":\"ANAND\",\r\n            \"passengerAge\":22\r\n\r\n        },\r\n         {\r\n            \"passengerName\":\"AKILA\",\r\n            \"passengerAge\":23\r\n\r\n        },\r\n         {\r\n            \"passengerName\":\"ANAND AKILA\",\r\n            \"passengerAge\":23\r\n\r\n        },\r\n         {\r\n            \"passengerName\":\"ANAND AKILA\",\r\n            \"passengerAge\":23\r\n\r\n        },\r\n        {\r\n            \"passengerName\":\"ANAND AKILA\",\r\n            \"passengerAge\":23\r\n\r\n        },\r\n        {\r\n            \"passengerName\":\"ANAND AKILA\",\r\n            \"passengerAge\":23\r\n\r\n        }\r\n\r\n\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/irctc/booking/bookticket/12661/TSI/TBM/2022-10-25/SL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"booking",
+						"bookticket",
+						"12661",
+						"TSI",
+						"TBM",
+						"2022-10-25",
+						"SL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addnewStattion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhha3VtYXIiLCJpYXQiOjE2NjMzMjE2NDksImV4cCI6MTY2MzQwODA0OX0.pZqAR_sMZM7mrt1hA7gD8aNYzjPDi0ge9po9C3soeTg24smg-uC5yefeiGE4pK0gRMrY1kfxPpMarD-jIqR0wg",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"stationCode\" :\"MDU\",\r\n   \"stationName\":\"MADURAI\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/station/addnewStattion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"station",
+						"addnewStattion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TICKET AVAIL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjYwNTc4MzM3LCJleHAiOjE2NjA2NjQ3Mzd9.HqJWO7HZuXbCDTWxUIZt0Lpo6yu5j-eQyuvHgE0_GTd2T1BEIdfVoSJcBTQsDGxp9zfjxNmbzB2xttEtBec9Zg",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/irctc/booking/avail/12661/TSI/TBM/2022-10-25/1A",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"booking",
+						"avail",
+						"12661",
+						"TSI",
+						"TBM",
+						"2022-10-25",
+						"1A"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getdata by interface",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbmFudGhhIGt1bWFyIiwiaWF0IjoxNjYwMTA5MjkwLCJleHAiOjE2NjAxOTU2OTB9.wxOJQy3mQgRmZyHBFMfeQdjJsz1MB3kXpod2LEcPRfal0iXYKLgqJV9zDWepBqhkXazxAQJWtmJdkZmigk_mLA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/distance/getdata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"distance",
+						"getdata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pnr Status(path)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/irctc/enquiry/pnrsearch/8435161108",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"enquiry",
+						"pnrsearch",
+						"8435161108"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/irctc/booking/searchtrain/tsi/ms/2022-08-18",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "au",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/irctc/booking/searchtrain/TSI/TBM/2022-10-25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"booking",
+						"searchtrain",
+						"TSI",
+						"TBM",
+						"2022-10-25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PassengerReviewPageApi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/irctc/booking/passReview/cX$7Ctk/GEN/SL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"irctc",
+						"booking",
+						"passReview",
+						"cX$7Ctk",
+						"GEN",
+						"SL"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
