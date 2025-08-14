@@ -117,7 +117,7 @@ def extract_html(file_path: Path) -> str:
 	with open(file_path, "rb") as f:
 		html_bytes = f.read()
 	encoding = detect_file_encoding(html_bytes)
-	soup = BeautifulSoup(html_bytes.decode(encoding, errors="ignore"), "lxml")
+	soup = BeautifulSoup(html_bytes.decode(encoding, errors="ignore"), "html.parser")
 	# Optionally remove script/style elements
 	for tag in soup(["script", "style", "noscript"]):
 		tag.decompose()
@@ -173,6 +173,16 @@ def try_catdoc_doc(file_path: Path) -> Optional[str]:
 		return None
 	# Force UTF-8 output when possible
 	code, out, err = run_command(["catdoc", "-d", "utf-8", str(file_path)])
+	if code == 0 and out:
+		return normalize_whitespace(out)
+	return None
+
+
+def try_catppt_ppt(file_path: Path) -> Optional[str]:
+	"""Use 'catppt' (from catdoc suite) if installed to extract text from .ppt."""
+	if shutil.which("catppt") is None:
+		return None
+	code, out, err = run_command(["catppt", str(file_path)])
 	if code == 0 and out:
 		return normalize_whitespace(out)
 	return None
